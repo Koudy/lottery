@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+    fpm:
+        container_name: 'fpm'
+        image: prevedka/alpine-php:8.0-dev
+        ports:
+            - "2244:22"
+            - "9000:9000"
+        volumes:
+            - ./:/app
+        working_dir: /app
+
+    webapp:
+        container_name: 'nginx' 
+        image: nginx:1.19.6-alpine
+        hostname: 'lottery'
+        domainname: lottery.docker
+        environment:
+            URL: www.example.co.uk
+        ports:
+            - "80:80"
+        expose:
+            - "80"
+            - "443"
+        volumes:
+            - ./:/app
+            - ./docker/nginx/nginx.conf:/etc//nginx/nginx.conf
+            - ./docker/nginx/sites/:/etc/nginx/sites-available
+            - ./docker/nginx/conf.d/:/etc/nginx/conf.d
+            - ./logs:/var/log
+        working_dir: /app
+        domainname: www.example.co.uk
+        restart: always
+        depends_on:
+            - fpm

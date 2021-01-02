@@ -1,0 +1,24 @@
+2021/01/02 19:02:40 [emerg] 1#1: "daemon" directive is duplicate in /etc/nginx/nginx.conf:3
+2021/01/02 19:02:41 [emerg] 1#1: "daemon" directive is duplicate in /etc/nginx/nginx.conf:3
+2021/01/02 19:02:42 [emerg] 1#1: "daemon" directive is duplicate in /etc/nginx/nginx.conf:3
+2021/01/02 19:02:43 [emerg] 1#1: "daemon" directive is duplicate in /etc/nginx/nginx.conf:3
+2021/01/02 19:02:45 [emerg] 1#1: "daemon" directive is duplicate in /etc/nginx/nginx.conf:3
+2021/01/02 19:09:04 [error] 30#30: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.144.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:09:06 [error] 30#30: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.144.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:09:06 [error] 30#30: *3 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.144.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:09:06 [error] 30#30: *4 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.144.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:09:07 [error] 30#30: *5 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.144.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:09:07 [error] 30#30: *6 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.144.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:11:18 [error] 31#31: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.160.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:34:35 [emerg] 1#1: no port in upstream "php-upstream" in /etc/nginx/sites-available/default.conf:15
+2021/01/02 19:34:36 [emerg] 1#1: no port in upstream "php-upstream" in /etc/nginx/sites-available/default.conf:15
+2021/01/02 19:34:37 [emerg] 1#1: no port in upstream "php-upstream" in /etc/nginx/sites-available/default.conf:15
+2021/01/02 19:34:38 [emerg] 1#1: no port in upstream "php-upstream" in /etc/nginx/sites-available/default.conf:15
+2021/01/02 19:34:40 [emerg] 1#1: no port in upstream "php-upstream" in /etc/nginx/sites-available/default.conf:15
+2021/01/02 19:34:42 [emerg] 1#1: no port in upstream "php-upstream" in /etc/nginx/sites-available/default.conf:15
+2021/01/02 19:34:46 [emerg] 1#1: no port in upstream "php-upstream" in /etc/nginx/sites-available/default.conf:15
+2021/01/02 19:44:12 [error] 29#29: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:44:13 [error] 29#29: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:44:14 [error] 29#29: *3 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:47:52 [error] 30#30: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/01/02 19:47:53 [error] 30#30: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
