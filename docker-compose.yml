@@ -9,9 +9,11 @@ services:
         volumes:
             - ./:/app
         working_dir: /app
+        env_file:
+            - .env
 
     webapp:
-        container_name: 'nginx' 
+        container_name: 'nginx'
         image: nginx:1.19.6-alpine
         hostname: 'lottery'
         domainname: lottery.docker
@@ -29,7 +31,15 @@ services:
             - ./docker/nginx/conf.d/:/etc/nginx/conf.d
             - ./logs:/var/log
         working_dir: /app
-        domainname: www.example.co.uk
         restart: always
         depends_on:
             - fpm
+
+    db:
+        container_name: 'postgresql'
+        image: postgres:13.1-alpine
+        ports:
+            - "49198:5432"
+        env_file:
+            - .env
+        restart: always
