@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210103232941 extends AbstractMigration
+final class Version20210103232941AddUser extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -28,7 +28,6 @@ final class Version20210103232941 extends AbstractMigration
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE SCHEMA public');
         $this->addSql('DROP SEQUENCE "user_id_seq" CASCADE');
         $this->addSql('DROP TABLE "user"');
     }
