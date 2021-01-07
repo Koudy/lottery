@@ -16,7 +16,6 @@ class MoneyFactoryTest extends TestCase
 
         $factory = new MoneyFactory($generator, $repository);
 
-
         $this->assertSame($generator, $factory->getStructureGenerator());
     }
 

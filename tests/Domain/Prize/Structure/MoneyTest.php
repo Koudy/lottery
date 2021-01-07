@@ -11,7 +11,7 @@ class MoneyTest extends TestCase
 
     private const CURRENCY = 'currency';
 
-    public function testGetSum(): void
+    public function testGetParameters(): void
     {
         $money = new Money(self::SUM, self::CURRENCY);
 
