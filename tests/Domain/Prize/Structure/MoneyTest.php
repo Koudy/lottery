@@ -22,4 +22,11 @@ class MoneyTest extends TestCase
 
         $this->assertSame($expectedParameters, $money->getParameters());
     }
+
+    public function testGetDescription(): void
+    {
+        $money = new Money(self::SUM, self::CURRENCY);
+
+        $this->assertSame(self::SUM . ' ' . self::CURRENCY, $money->getDescription());
+    }
 }

@@ -40,4 +40,12 @@ class Money implements PrizeStructureInterface
             self::PARAMETER_NAME_CURRENCY => $this->currency
         ];
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDescription(): string
+    {
+        return sprintf('%s %s', $this->sum, $this->currency);
+    }
 }

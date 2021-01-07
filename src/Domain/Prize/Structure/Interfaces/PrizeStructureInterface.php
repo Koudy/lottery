@@ -8,4 +8,9 @@ interface PrizeStructureInterface
      * @return array
      */
     public function getParameters(): array;
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string;
 }
