@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Interfaces;
 
-interface StructureGeneratorInterface
+interface GeneratorInterface
 {
     /**
      * @return PrizeStructureInterface

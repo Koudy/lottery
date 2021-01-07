@@ -6,7 +6,7 @@ use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
 use App\Domain\Prize\Structure\Interfaces\MoneyInterface;
 use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
-use App\Domain\Prize\Structure\MoneyStructureGenerator;
+use App\Domain\Prize\Structure\MoneyGenerator;
 use PHPUnit\Framework\TestCase;
 
 class MoneyStructureGeneratorTest extends TestCase
@@ -41,7 +41,7 @@ class MoneyStructureGeneratorTest extends TestCase
             ->with(self::LIMIT)
             ->willReturn(self::SUM);
 
-        $generator = new MoneyStructureGenerator($configuration, $sumGenerator, $structureFactory);
+        $generator = new MoneyGenerator($configuration, $sumGenerator, $structureFactory);
 
         $this->assertSame($structure, $generator->generate());
     }

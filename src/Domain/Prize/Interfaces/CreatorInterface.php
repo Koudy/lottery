@@ -2,19 +2,19 @@
 
 namespace App\Domain\Prize\Interfaces;
 
-use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 
 interface CreatorInterface
 {
     /**
      * @param string $type
      * @param string $userName
-     * @param StructureGeneratorInterface $structureGenerator
+     * @param GeneratorInterface $structureGenerator
      * @return PrizeInterface
      */
     public function create(
         string $type,
         string $userName,
-        StructureGeneratorInterface $structureGenerator
+        GeneratorInterface $structureGenerator
     ): PrizeInterface;
 }

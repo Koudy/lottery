@@ -6,7 +6,7 @@ use App\Domain\Prize\Interfaces\FactoryInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
 use App\Domain\Prize\Creator;
 use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
-use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 use PHPUnit\Framework\TestCase;
 
 class PrizeCreatorTest extends TestCase
@@ -19,7 +19,7 @@ class PrizeCreatorTest extends TestCase
     {
         $structure = $this->createMock(PrizeStructureInterface::class);
 
-        $structureGenerator = $this->createMock(StructureGeneratorInterface::class);
+        $structureGenerator = $this->createMock(GeneratorInterface::class);
         $structureGenerator
             ->method('generate')
             ->willReturn($structure);

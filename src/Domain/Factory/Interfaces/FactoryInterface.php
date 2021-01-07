@@ -2,15 +2,15 @@
 
 namespace App\Domain\Factory\Interfaces;
 
-use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 
 interface FactoryInterface
 {
     /**
-     * @return StructureGeneratorInterface
+     * @return GeneratorInterface
      */
-    public function getStructureGenerator(): StructureGeneratorInterface;
+    public function getStructureGenerator(): GeneratorInterface;
 
     /**
      * @return PrizeRepositoryInterface

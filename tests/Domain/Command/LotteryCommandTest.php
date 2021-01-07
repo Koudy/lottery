@@ -9,7 +9,7 @@ use App\Domain\Factory\Interfaces\FactoryInterface;
 use App\Domain\Prize\Interfaces\CreatorInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
 use App\Domain\Prize\Interfaces\TypeRandomizerInterface;
-use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -37,7 +37,7 @@ class LotteryCommandTest extends TestCase
             ->method('provide')
             ->willReturn(self::PRICE_TYPE);
 
-        $structureGenerator = $this->createMock(StructureGeneratorInterface::class);
+        $structureGenerator = $this->createMock(GeneratorInterface::class);
 
         $prizeRepository = $this->createMock(PrizeRepositoryInterface::class);
         $prizeRepository

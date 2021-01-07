@@ -3,17 +3,17 @@
 namespace App\Domain\Factory;
 
 use App\Domain\Factory\Interfaces\FactoryInterface;
-use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
-use App\Domain\Prize\Structure\MoneyStructureGenerator;
+use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
+use App\Domain\Prize\Structure\MoneyGenerator;
 use App\Domain\Repository\MoneyPrizeRepository;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 
 class MoneyFactory implements FactoryInterface
 {
     /**
-     * @var MoneyStructureGenerator
+     * @var MoneyGenerator
      */
-    private MoneyStructureGenerator $moneyStructureGenerator;
+    private MoneyGenerator $moneyStructureGenerator;
 
     /**
      * @var MoneyPrizeRepository
@@ -21,11 +21,11 @@ class MoneyFactory implements FactoryInterface
     private MoneyPrizeRepository $moneyPrizeRepository;
 
     /**
-     * @param MoneyStructureGenerator $structureGenerator
+     * @param MoneyGenerator $structureGenerator
      * @param MoneyPrizeRepository $moneyPrizeRepository
      */
     public function __construct(
-        MoneyStructureGenerator $structureGenerator,
+        MoneyGenerator $structureGenerator,
         MoneyPrizeRepository $moneyPrizeRepository
     )
     {
@@ -36,7 +36,7 @@ class MoneyFactory implements FactoryInterface
     /**
      * @inheritDoc
      */
-    public function getStructureGenerator(): StructureGeneratorInterface
+    public function getStructureGenerator(): GeneratorInterface
     {
         return $this->moneyStructureGenerator;
     }

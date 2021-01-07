@@ -6,9 +6,9 @@ use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
 use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
-use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 
-class MoneyStructureGenerator implements StructureGeneratorInterface
+class MoneyGenerator implements GeneratorInterface
 {
     /**
      * @var ConfigurationInterface
