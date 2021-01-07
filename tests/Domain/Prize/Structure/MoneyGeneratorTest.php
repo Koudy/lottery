@@ -9,7 +9,7 @@ use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
 use App\Domain\Prize\Structure\MoneyGenerator;
 use PHPUnit\Framework\TestCase;
 
-class MoneyStructureGeneratorTest extends TestCase
+class MoneyGeneratorTest extends TestCase
 {
     private const SUM = 100;
 

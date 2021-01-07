@@ -5,7 +5,7 @@ namespace App\Tests\Domain\Prize\Structure;
 use App\Domain\Prize\Structure\MoneyFactory;
 use Monolog\Test\TestCase;
 
-class MoneyStructureFactoryTest extends TestCase
+class MoneyFactoryTest extends TestCase
 {
     private const SUM = 100;
 

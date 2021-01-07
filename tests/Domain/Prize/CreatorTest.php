@@ -9,7 +9,7 @@ use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 use PHPUnit\Framework\TestCase;
 
-class PrizeCreatorTest extends TestCase
+class CreatorTest extends TestCase
 {
     private const PRICE_TYPE = 'prize type';
 
