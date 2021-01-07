@@ -2,10 +2,10 @@
 
 namespace App\Repository;
 
-use App\Domain\Prize\Interfaces\PrizeInterface;
-use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 use App\Entity\Prize;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -14,16 +14,23 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Prize[]    findAll()
  * @method Prize[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PrizeRepository extends ServiceEntityRepository implements PrizeRepositoryInterface
+class PrizeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Prize::class);
     }
 
-    public function store(PrizeInterface $prize): void
+    /**
+     * @param Prize $prize
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function store(Prize $prize): void
     {
-        // TODO: Implement store() method.
+        $this->getEntityManager()->persist($prize);
+
+        $this->getEntityManager()->flush();
     }
 
     // /**

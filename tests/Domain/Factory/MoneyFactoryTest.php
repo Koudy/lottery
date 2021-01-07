@@ -4,7 +4,7 @@ namespace App\Tests\Domain\Factory;
 
 use App\Domain\Factory\MoneyFactory;
 use App\Domain\Prize\Structure\MoneyGenerator;
-use App\Domain\Repository\MoneyPrizeRepository;
+use App\Domain\Repository\Interfaces\MoneyPrizeRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 
 class MoneyFactoryTest extends TestCase
@@ -12,7 +12,7 @@ class MoneyFactoryTest extends TestCase
     public function testGetStructureGenerator(): void
     {
         $generator = $this->createMock(MoneyGenerator::class);
-        $repository = $this->createMock(MoneyPrizeRepository::class);
+        $repository = $this->createMock(MoneyPrizeRepositoryInterface::class);
 
         $factory = new MoneyFactory($generator, $repository);
 
@@ -23,7 +23,7 @@ class MoneyFactoryTest extends TestCase
     public function testGetRepository(): void
     {
         $generator = $this->createMock(MoneyGenerator::class);
-        $repository = $this->createMock(MoneyPrizeRepository::class);
+        $repository = $this->createMock(MoneyPrizeRepositoryInterface::class);
 
         $factory = new MoneyFactory($generator, $repository);
 

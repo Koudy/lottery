@@ -28,6 +28,11 @@ class Prize
      */
     private $type;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Money::class, mappedBy="prize", cascade={"persist", "remove"})
+     */
+    private $money;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -41,7 +46,7 @@ class Prize
         return $this->user;
     }
 
-    public function setUserId(User $user): self
+    public function setUser(User $user): self
     {
         $this->user = $user;
 
@@ -56,6 +61,23 @@ class Prize
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getMoney(): ?Money
+    {
+        return $this->money;
+    }
+
+    public function setMoney(Money $money): self
+    {
+        // set the owning side of the relation if necessary
+        if ($money->getPrize() !== $this) {
+            $money->setPrize($this);
+        }
+
+        $this->money = $money;
 
         return $this;
     }

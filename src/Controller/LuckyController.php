@@ -26,8 +26,8 @@ class LuckyController extends AbstractController
 
         $command->execute($context);
 
-//        var_dump($context->getPrize());
-//        exit;
+        var_dump($context->getPrize());
+        exit;
         $number = random_int(0, 2);
 
         return $this->render('lucky/number.html.twig', [
