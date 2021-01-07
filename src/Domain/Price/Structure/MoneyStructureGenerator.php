@@ -4,9 +4,9 @@ namespace App\Domain\Price\Structure;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
-use App\Domain\Price\Interfaces\PriceStructureInterface;
 use App\Domain\Price\Interfaces\StructureGeneratorInterface;
 use App\Domain\Price\Structure\Interfaces\MoneyStructureFactoryInterface;
+use App\Domain\Price\Structure\Interfaces\PriceStructureInterface;
 
 class MoneyStructureGenerator implements StructureGeneratorInterface
 {

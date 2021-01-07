@@ -2,8 +2,6 @@
 
 namespace App\Domain\Price\Structure\Interfaces;
 
-use App\Domain\Price\Interfaces\PriceStructureInterface;
-
 interface MoneyInterface extends PriceStructureInterface
 {
     /**

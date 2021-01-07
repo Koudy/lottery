@@ -2,8 +2,8 @@
 
 namespace App\Tests\Domain\Price;
 
-use App\Domain\Price\Interfaces\PriceStructureInterface;
 use App\Domain\Price\Price;
+use App\Domain\Price\Structure\Interfaces\PriceStructureInterface;
 use PHPUnit\Framework\TestCase;
 
 class PriceTest extends TestCase

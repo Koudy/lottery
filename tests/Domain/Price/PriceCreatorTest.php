@@ -5,8 +5,8 @@ namespace App\Tests\Domain\Price;
 use App\Domain\Price\Interfaces\StructureGeneratorInterface;
 use App\Domain\Price\Interfaces\FactoryInterface;
 use App\Domain\Price\Interfaces\PriceInterface;
-use App\Domain\Price\Interfaces\PriceStructureInterface;
 use App\Domain\Price\PriceCreator;
+use App\Domain\Price\Structure\Interfaces\PriceStructureInterface;
 use PHPUnit\Framework\TestCase;
 
 class PriceCreatorTest extends TestCase

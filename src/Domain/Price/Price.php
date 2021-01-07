@@ -3,7 +3,7 @@
 namespace App\Domain\Price;
 
 use App\Domain\Price\Interfaces\PriceInterface;
-use App\Domain\Price\Interfaces\PriceStructureInterface;
+use App\Domain\Price\Structure\Interfaces\PriceStructureInterface;
 
 class Price implements PriceInterface
 {

@@ -2,6 +2,8 @@
 
 namespace App\Domain\Price\Interfaces;
 
+use App\Domain\Price\Structure\Interfaces\PriceStructureInterface;
+
 interface PriceInterface
 {
     /**
