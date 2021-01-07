@@ -6,7 +6,7 @@ use App\Domain\Command\Context\Interfaces\LotteryContextInterface;
 use App\Domain\Command\LotteryCommand;
 use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
 use App\Domain\Factory\Interfaces\FactoryInterface;
-use App\Domain\Prize\Interfaces\PrizeCreatorInterface;
+use App\Domain\Prize\Interfaces\CreatorInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
 use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
 use App\Domain\Prize\Interfaces\TypeRandomizerInterface;
@@ -59,7 +59,7 @@ class LotteryCommandTest extends TestCase
             ->with(self::PRICE_TYPE)
             ->willReturn($factory);
 
-        $prizeCreator = $this->createMock(PrizeCreatorInterface::class);
+        $prizeCreator = $this->createMock(CreatorInterface::class);
         $prizeCreator
             ->method('create')
             ->with(self::PRICE_TYPE, self::USER_NAME, $structureGenerator)

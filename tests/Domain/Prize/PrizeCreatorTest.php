@@ -5,7 +5,7 @@ namespace App\Tests\Domain\Prize;
 use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
 use App\Domain\Prize\Interfaces\FactoryInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
-use App\Domain\Prize\PrizeCreator;
+use App\Domain\Prize\Creator;
 use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -32,7 +32,7 @@ class PrizeCreatorTest extends TestCase
             ->with(self::PRICE_TYPE, self::USER_NAME, $structure)
             ->willReturn($prize);
 
-        $prizeCreator = new PrizeCreator($prizeFactory);
+        $prizeCreator = new Creator($prizeFactory);
 
         $this->assertSame(
             $prize,

@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Interfaces;
 
-interface PrizeCreatorInterface
+interface CreatorInterface
 {
     /**
      * @param string $type

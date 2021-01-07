@@ -4,7 +4,7 @@ namespace App\Domain\Command;
 
 use App\Domain\Command\Context\Interfaces\LotteryContextInterface;
 use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
-use App\Domain\Prize\Interfaces\PrizeCreatorInterface;
+use App\Domain\Prize\Interfaces\CreatorInterface;
 use App\Domain\Prize\Interfaces\TypeRandomizerInterface;
 
 class LotteryCommand
@@ -20,14 +20,14 @@ class LotteryCommand
     private FactoriesSelectorInterface $factoriesSelector;
 
     /**
-     * @var PrizeCreatorInterface
+     * @var CreatorInterface
      */
-    private PrizeCreatorInterface $prizeCreator;
+    private CreatorInterface $prizeCreator;
 
     public function __construct(
         TypeRandomizerInterface $typeRandomizer,
         FactoriesSelectorInterface $factoriesSelector,
-        PrizeCreatorInterface $prizeCreator
+        CreatorInterface $prizeCreator
     ) {
         $this->prizeTypeRandomizer = $typeRandomizer;
         $this->factoriesSelector = $factoriesSelector;
