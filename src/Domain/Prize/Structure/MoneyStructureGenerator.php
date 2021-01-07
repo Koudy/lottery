@@ -4,7 +4,7 @@ namespace App\Domain\Prize\Structure;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
-use App\Domain\Prize\Structure\Interfaces\MoneyStructureFactoryInterface;
+use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
 use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
 
@@ -21,19 +21,19 @@ class MoneyStructureGenerator implements StructureGeneratorInterface
     private SumGeneratorInterface $sumGenerator;
 
     /**
-     * @var MoneyStructureFactoryInterface
+     * @var MoneyFactoryInterface
      */
-    private MoneyStructureFactoryInterface $moneyStructureFactory;
+    private MoneyFactoryInterface $moneyStructureFactory;
 
     /**
      * @param ConfigurationInterface $configuration
      * @param SumGeneratorInterface $sumGenerator
-     * @param MoneyStructureFactoryInterface $moneyStructureFactory
+     * @param MoneyFactoryInterface $moneyStructureFactory
      */
     public function __construct(
         ConfigurationInterface $configuration,
         SumGeneratorInterface $sumGenerator,
-        MoneyStructureFactoryInterface $moneyStructureFactory
+        MoneyFactoryInterface $moneyStructureFactory
     )
     {
         $this->configuration = $configuration;

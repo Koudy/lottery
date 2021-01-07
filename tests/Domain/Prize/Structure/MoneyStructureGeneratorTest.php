@@ -5,7 +5,7 @@ namespace App\Tests\Domain\Prize\Structure;
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
 use App\Domain\Prize\Structure\Interfaces\MoneyInterface;
-use App\Domain\Prize\Structure\Interfaces\MoneyStructureFactoryInterface;
+use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
 use App\Domain\Prize\Structure\MoneyStructureGenerator;
 use PHPUnit\Framework\TestCase;
 
@@ -29,7 +29,7 @@ class MoneyStructureGeneratorTest extends TestCase
             ->method('getMoneyLimit')
             ->willReturn(self::LIMIT);
 
-        $structureFactory = $this->createMock(MoneyStructureFactoryInterface::class);
+        $structureFactory = $this->createMock(MoneyFactoryInterface::class);
         $structureFactory
             ->method('create')
             ->with(self::SUM, self::CURRENCY)

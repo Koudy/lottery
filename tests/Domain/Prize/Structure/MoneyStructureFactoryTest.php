@@ -2,7 +2,7 @@
 
 namespace App\Tests\Domain\Prize\Structure;
 
-use App\Domain\Prize\Structure\MoneyStructureFactory;
+use App\Domain\Prize\Structure\MoneyFactory;
 use Monolog\Test\TestCase;
 
 class MoneyStructureFactoryTest extends TestCase
@@ -13,7 +13,7 @@ class MoneyStructureFactoryTest extends TestCase
 
     public function testCreate(): void
     {
-        $factory = new MoneyStructureFactory();
+        $factory = new MoneyFactory();
 
         $structure = $factory->create(self::SUM, self::CURRENCY);
 

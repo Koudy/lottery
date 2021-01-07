@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Interfaces;
 
-interface MoneyStructureFactoryInterface
+interface MoneyFactoryInterface
 {
     /**
      * @param int $sum

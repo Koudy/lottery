@@ -3,9 +3,9 @@
 namespace App\Domain\Prize\Structure;
 
 use App\Domain\Prize\Structure\Interfaces\MoneyInterface;
-use App\Domain\Prize\Structure\Interfaces\MoneyStructureFactoryInterface;
+use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
 
-class MoneyStructureFactory implements MoneyStructureFactoryInterface
+class MoneyFactory implements MoneyFactoryInterface
 {
     /**
      * @inheritDoc
