@@ -3,10 +3,10 @@
 namespace App\Domain\Factory;
 
 use App\Domain\Factory\Interfaces\FactoryInterface;
-use App\Domain\Price\Interfaces\StructureGeneratorInterface;
-use App\Domain\Price\Structure\MoneyStructureGenerator;
-use App\Domain\Repository\MoneyPriceRepository;
-use App\Domain\Repository\Interfaces\PriceRepositoryInterface;
+use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Structure\MoneyStructureGenerator;
+use App\Domain\Repository\MoneyPrizeRepository;
+use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 
 class MoneyFactory implements FactoryInterface
 {
@@ -16,21 +16,21 @@ class MoneyFactory implements FactoryInterface
     private MoneyStructureGenerator $moneyStructureGenerator;
 
     /**
-     * @var MoneyPriceRepository
+     * @var MoneyPrizeRepository
      */
-    private MoneyPriceRepository $moneyPriceRepository;
+    private MoneyPrizeRepository $moneyPrizeRepository;
 
     /**
      * @param MoneyStructureGenerator $structureGenerator
-     * @param MoneyPriceRepository $moneyPriceRepository
+     * @param MoneyPrizeRepository $moneyPrizeRepository
      */
     public function __construct(
         MoneyStructureGenerator $structureGenerator,
-        MoneyPriceRepository $moneyPriceRepository
+        MoneyPrizeRepository $moneyPrizeRepository
     )
     {
         $this->moneyStructureGenerator = $structureGenerator;
-        $this->moneyPriceRepository = $moneyPriceRepository;
+        $this->moneyPrizeRepository = $moneyPrizeRepository;
     }
 
     /**
@@ -44,8 +44,8 @@ class MoneyFactory implements FactoryInterface
     /**
      * @inheritDoc
      */
-    public function getRepository(): PriceRepositoryInterface
+    public function getRepository(): PrizeRepositoryInterface
     {
-        return $this->moneyPriceRepository;
+        return $this->moneyPrizeRepository;
     }
 }

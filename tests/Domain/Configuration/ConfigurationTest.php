@@ -11,16 +11,16 @@ class ConfigurationTest extends TestCase
 
     private const LIMIT = 100;
 
-    public function testGetPriceTypes(): void
+    public function testGetPrizeTypes(): void
     {
-        $priceTypes = [
+        $prizeTypes = [
             'type1',
             'type2'
         ];
 
-        $configuration = new Configuration($priceTypes, '', 0);
+        $configuration = new Configuration($prizeTypes, '', 0);
 
-        $this->assertSame($priceTypes, $configuration->getPriceTypes());
+        $this->assertSame($prizeTypes, $configuration->getPrizeTypes());
     }
 
     public function testGetCurrency(): void

@@ -9,30 +9,30 @@ class ItemRandomizerTest extends TestCase
 {
     public function testProvide(): void
     {
-        $pricesTypes = $this->createPriceTypes();
+        $prizesTypes = $this->createPrizeTypes();
 
         $randomizer = new ItemRandomizer();
 
-        $type = $randomizer->provide($pricesTypes);
+        $type = $randomizer->provide($prizesTypes);
 
-        $this->assertNotEquals($type, $randomizer->provide($pricesTypes));
-        $this->assertContains($type, $pricesTypes);
+        $this->assertNotEquals($type, $randomizer->provide($prizesTypes));
+        $this->assertContains($type, $prizesTypes);
     }
 
     public function testProvideWhenOneElement(): void
     {
         $type = 'type';
-        $pricesTypes = [$type];
+        $prizesTypes = [$type];
 
         $randomizer = new ItemRandomizer();
 
-        $this->assertSame($type, $randomizer->provide($pricesTypes));
+        $this->assertSame($type, $randomizer->provide($prizesTypes));
     }
 
     /**
      * @return string[]
      */
-    private function createPriceTypes(): array
+    private function createPrizeTypes(): array
     {
         $types = [];
 

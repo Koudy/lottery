@@ -6,11 +6,11 @@ use App\Domain\Command\Context\Interfaces\LotteryContextInterface;
 use App\Domain\Command\LotteryCommand;
 use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
 use App\Domain\Factory\Interfaces\FactoryInterface;
-use App\Domain\Price\Interfaces\PriceCreatorInterface;
-use App\Domain\Price\Interfaces\PriceInterface;
-use App\Domain\Price\Interfaces\StructureGeneratorInterface;
-use App\Domain\Price\Interfaces\TypeRandomizerInterface;
-use App\Domain\Repository\Interfaces\PriceRepositoryInterface;
+use App\Domain\Prize\Interfaces\PrizeCreatorInterface;
+use App\Domain\Prize\Interfaces\PrizeInterface;
+use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Interfaces\TypeRandomizerInterface;
+use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 
 class LotteryCommandTest extends TestCase
@@ -21,13 +21,13 @@ class LotteryCommandTest extends TestCase
 
     public function testExecute(): void
     {
-        $price = $this->createMock(PriceInterface::class);
+        $prize = $this->createMock(PrizeInterface::class);
 
         $context = $this->createMock(LotteryContextInterface::class);
         $context
             ->expects(self::once())
-            ->method('setPrice')
-            ->with($this->identicalTo($price));
+            ->method('setPrize')
+            ->with($this->identicalTo($prize));
         $context
             ->method('getUserName')
             ->willReturn(self::USER_NAME);
@@ -39,11 +39,11 @@ class LotteryCommandTest extends TestCase
 
         $structureGenerator = $this->createMock(StructureGeneratorInterface::class);
 
-        $priceRepository = $this->createMock(PriceRepositoryInterface::class);
-        $priceRepository
+        $prizeRepository = $this->createMock(PrizeRepositoryInterface::class);
+        $prizeRepository
             ->expects(self::once())
             ->method('store')
-            ->with($price);
+            ->with($prize);
 
         $factory = $this->createMock(FactoryInterface::class);
         $factory
@@ -51,7 +51,7 @@ class LotteryCommandTest extends TestCase
             ->willReturn($structureGenerator);
         $factory
             ->method('getRepository')
-            ->willReturn($priceRepository);
+            ->willReturn($prizeRepository);
 
         $factoriesSelector = $this->createMock(FactoriesSelectorInterface::class);
         $factoriesSelector
@@ -59,13 +59,13 @@ class LotteryCommandTest extends TestCase
             ->with(self::PRICE_TYPE)
             ->willReturn($factory);
 
-        $priceCreator = $this->createMock(PriceCreatorInterface::class);
-        $priceCreator
+        $prizeCreator = $this->createMock(PrizeCreatorInterface::class);
+        $prizeCreator
             ->method('create')
             ->with(self::PRICE_TYPE, self::USER_NAME, $structureGenerator)
-            ->willReturn($price);
+            ->willReturn($prize);
 
-        $command = new LotteryCommand($typeRandomizer, $factoriesSelector, $priceCreator);
+        $command = new LotteryCommand($typeRandomizer, $factoriesSelector, $prizeCreator);
 
         $command->execute($context);
     }

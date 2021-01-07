@@ -2,7 +2,7 @@
 
 namespace App\Domain\Command\Context\Interfaces;
 
-use App\Domain\Price\Interfaces\PriceInterface;
+use App\Domain\Prize\Interfaces\PrizeInterface;
 
 interface LotteryContextInterface
 {
@@ -12,12 +12,12 @@ interface LotteryContextInterface
     public function getUserName(): string;
 
     /**
-     * @return PriceInterface|null
+     * @return PrizeInterface|null
      */
-    public function getPrice(): ?PriceInterface;
+    public function getPrize(): ?PrizeInterface;
 
     /**
-     * @param PriceInterface $price
+     * @param PrizeInterface $prize
      */
-    public function setPrice(PriceInterface $price): void;
+    public function setPrize(PrizeInterface $prize): void;
 }

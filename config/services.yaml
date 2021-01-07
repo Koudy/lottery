@@ -32,7 +32,7 @@ services:
 
     App\Domain\Configuration\Configuration:
         arguments:
-            $priceTypes:
+            $prizeTypes:
                 - money
             $currency: RUB
             $moneyLimit: 500

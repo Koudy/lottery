@@ -13,7 +13,7 @@ interface ConfigurationInterface
     /**
      * @return string[]
      */
-    public function getPriceTypes(): array;
+    public function getPrizeTypes(): array;
 
     /**
      * @return string

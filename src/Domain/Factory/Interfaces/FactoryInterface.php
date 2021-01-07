@@ -2,8 +2,8 @@
 
 namespace App\Domain\Factory\Interfaces;
 
-use App\Domain\Price\Interfaces\StructureGeneratorInterface;
-use App\Domain\Repository\Interfaces\PriceRepositoryInterface;
+use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
+use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 
 interface FactoryInterface
 {
@@ -13,7 +13,7 @@ interface FactoryInterface
     public function getStructureGenerator(): StructureGeneratorInterface;
 
     /**
-     * @return PriceRepositoryInterface
+     * @return PrizeRepositoryInterface
      */
-    public function getRepository(): PriceRepositoryInterface;
+    public function getRepository(): PrizeRepositoryInterface;
 }

@@ -3,7 +3,7 @@
 namespace App\Tests\Domain\Command\Context;
 
 use App\Domain\Command\Context\LotteryContext;
-use App\Domain\Price\Interfaces\PriceInterface;
+use App\Domain\Prize\Interfaces\PrizeInterface;
 use PHPUnit\Framework\TestCase;
 
 class LotteryContextTest extends TestCase
@@ -17,21 +17,21 @@ class LotteryContextTest extends TestCase
         $this->assertSame(self::USER_NAME, $context->getUserName());
     }
 
-    public function testGetPrice(): void
+    public function testGetPrize(): void
     {
         $context = new LotteryContext(self::USER_NAME);
 
-        $price = $this->createMock(PriceInterface::class);
+        $prize = $this->createMock(PrizeInterface::class);
 
-        $context->setPrice($price);
+        $context->setPrize($prize);
 
-        $this->assertSame($price, $context->getPrice());
+        $this->assertSame($prize, $context->getPrize());
     }
 
-    public function testGetPriceWhenNoPrice(): void
+    public function testGetPrizeWhenNoPrize(): void
     {
         $context = new LotteryContext(self::USER_NAME);
 
-        $this->assertNull($context->getPrice());
+        $this->assertNull($context->getPrize());
     }
 }

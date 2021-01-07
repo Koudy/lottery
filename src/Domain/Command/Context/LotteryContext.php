@@ -3,7 +3,7 @@
 namespace App\Domain\Command\Context;
 
 use App\Domain\Command\Context\Interfaces\LotteryContextInterface;
-use App\Domain\Price\Interfaces\PriceInterface;
+use App\Domain\Prize\Interfaces\PrizeInterface;
 
 class LotteryContext implements LotteryContextInterface
 {
@@ -13,9 +13,9 @@ class LotteryContext implements LotteryContextInterface
     private string $userName;
 
     /**
-     * @var PriceInterface|null
+     * @var PrizeInterface|null
      */
-    private ?PriceInterface $price = null;
+    private ?PrizeInterface $prize = null;
 
     /**
      * @param string $userId
@@ -36,16 +36,16 @@ class LotteryContext implements LotteryContextInterface
     /**
      * @inheritDoc
      */
-    public function getPrice(): ?PriceInterface
+    public function getPrize(): ?PrizeInterface
     {
-        return $this->price;
+        return $this->prize;
     }
 
     /**
      * @inheritDoc
      */
-    public function setPrice(PriceInterface $price): void
+    public function setPrize(PrizeInterface $prize): void
     {
-        $this->price = $price;
+        $this->prize = $prize;
     }
 }

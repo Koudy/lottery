@@ -7,7 +7,7 @@ class Configuration implements ConfigurationInterface
     /**
      * @var array s
      */
-    private array $priceTypes;
+    private array $prizeTypes;
 
     /**
      * @var string
@@ -20,13 +20,13 @@ class Configuration implements ConfigurationInterface
     private int $moneyLimit;
 
     /**
-     * @param array $priceTypes
+     * @param array $prizeTypes
      * @param string $currency
      * @param int $moneyLimit
      */
-    public function __construct(array $priceTypes, string $currency, int $moneyLimit)
+    public function __construct(array $prizeTypes, string $currency, int $moneyLimit)
     {
-        $this->priceTypes = $priceTypes;
+        $this->prizeTypes = $prizeTypes;
         $this->currency = $currency;
         $this->moneyLimit = $moneyLimit;
     }
@@ -34,9 +34,9 @@ class Configuration implements ConfigurationInterface
     /**
      * @inheritDoc
      */
-    public function getPriceTypes(): array
+    public function getPrizeTypes(): array
     {
-        return $this->priceTypes;
+        return $this->prizeTypes;
     }
 
     /**

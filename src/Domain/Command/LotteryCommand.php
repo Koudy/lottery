@@ -4,15 +4,15 @@ namespace App\Domain\Command;
 
 use App\Domain\Command\Context\Interfaces\LotteryContextInterface;
 use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
-use App\Domain\Price\Interfaces\PriceCreatorInterface;
-use App\Domain\Price\Interfaces\TypeRandomizerInterface;
+use App\Domain\Prize\Interfaces\PrizeCreatorInterface;
+use App\Domain\Prize\Interfaces\TypeRandomizerInterface;
 
 class LotteryCommand
 {
     /**
      * @var TypeRandomizerInterface
      */
-    private TypeRandomizerInterface $priceTypeRandomizer;
+    private TypeRandomizerInterface $prizeTypeRandomizer;
 
     /**
      * @var FactoriesSelectorInterface
@@ -20,18 +20,18 @@ class LotteryCommand
     private FactoriesSelectorInterface $factoriesSelector;
 
     /**
-     * @var PriceCreatorInterface
+     * @var PrizeCreatorInterface
      */
-    private PriceCreatorInterface $priceCreator;
+    private PrizeCreatorInterface $prizeCreator;
 
     public function __construct(
         TypeRandomizerInterface $typeRandomizer,
         FactoriesSelectorInterface $factoriesSelector,
-        PriceCreatorInterface $priceCreator
+        PrizeCreatorInterface $prizeCreator
     ) {
-        $this->priceTypeRandomizer = $typeRandomizer;
+        $this->prizeTypeRandomizer = $typeRandomizer;
         $this->factoriesSelector = $factoriesSelector;
-        $this->priceCreator = $priceCreator;
+        $this->prizeCreator = $prizeCreator;
     }
 
     /**
@@ -39,18 +39,18 @@ class LotteryCommand
      */
     public function execute(LotteryContextInterface $context): void
     {
-        $priceType = $this->priceTypeRandomizer->provide();
+        $prizeType = $this->prizeTypeRandomizer->provide();
 
-        $factory = $this->factoriesSelector->select($priceType);
+        $factory = $this->factoriesSelector->select($prizeType);
 
-        $price = $this->priceCreator->create(
-            $priceType,
+        $prize = $this->prizeCreator->create(
+            $prizeType,
             $context->getUserName(),
             $factory->getStructureGenerator()
         );
 
-        $factory->getRepository()->store($price);
+        $factory->getRepository()->store($prize);
 
-        $context->setPrice($price);
+        $context->setPrize($prize);
     }
 }
