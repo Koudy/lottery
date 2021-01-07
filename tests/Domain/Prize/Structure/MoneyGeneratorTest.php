@@ -4,8 +4,8 @@ namespace App\Tests\Domain\Prize\Structure;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
-use App\Domain\Prize\Structure\Interfaces\MoneyInterface;
 use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
+use App\Domain\Prize\Structure\Money;
 use App\Domain\Prize\Structure\MoneyGenerator;
 use PHPUnit\Framework\TestCase;
 
@@ -19,7 +19,7 @@ class MoneyGeneratorTest extends TestCase
 
     public function testGenerate(): void
     {
-        $structure = $this->createMock(MoneyInterface::class);
+        $structure = $this->createMock(Money::class);
 
         $configuration = $this->createMock(ConfigurationInterface::class);
         $configuration

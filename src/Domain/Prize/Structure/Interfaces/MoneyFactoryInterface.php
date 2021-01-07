@@ -2,12 +2,14 @@
 
 namespace App\Domain\Prize\Structure\Interfaces;
 
+use App\Domain\Prize\Structure\Money;
+
 interface MoneyFactoryInterface
 {
     /**
      * @param int $sum
      * @param string $currency
-     * @return MoneyInterface
+     * @return Money
      */
-    public function create(int $sum, string $currency): MoneyInterface;
+    public function create(int $sum, string $currency): Money;
 }

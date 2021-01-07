@@ -17,7 +17,11 @@ class MoneyFactoryTest extends TestCase
 
         $structure = $factory->create(self::SUM, self::CURRENCY);
 
-        $this->assertSame(self::SUM, $structure->getSum());
-        $this->assertSame(self::CURRENCY, $structure->getCurrency());
+        $expectedParameters = [
+            'sum' => self::SUM,
+            'currency' => self::CURRENCY
+        ];
+
+        $this->assertSame($expectedParameters, $structure->getParameters());
     }
 }

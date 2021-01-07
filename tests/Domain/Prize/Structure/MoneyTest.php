@@ -15,7 +15,11 @@ class MoneyTest extends TestCase
     {
         $money = new Money(self::SUM, self::CURRENCY);
 
-        $this->assertSame(self::SUM, $money->getSum());
-        $this->assertSame(self::CURRENCY, $money->getCurrency());
+        $expectedParameters = [
+            'sum' => self::SUM,
+            'currency' => self::CURRENCY
+        ];
+
+        $this->assertSame($expectedParameters, $money->getParameters());
     }
 }

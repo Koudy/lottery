@@ -2,10 +2,14 @@
 
 namespace App\Domain\Prize\Structure;
 
-use App\Domain\Prize\Structure\Interfaces\MoneyInterface;
+use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
 
-class Money implements MoneyInterface
+class Money implements PrizeStructureInterface
 {
+    public const PARAMETER_NAME_SUM = 'sum';
+
+    public const PARAMETER_NAME_CURRENCY = 'currency';
+
     /**
      * @var int
      */
@@ -29,16 +33,11 @@ class Money implements MoneyInterface
     /**
      * @inheritDoc
      */
-    public function getSum(): int
+    public function getParameters(): array
     {
-        return $this->sum;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getCurrency(): string
-    {
-        return $this->currency;
+        return [
+            self::PARAMETER_NAME_SUM => $this->sum,
+            self::PARAMETER_NAME_CURRENCY => $this->currency
+        ];
     }
 }
