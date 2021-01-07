@@ -2,7 +2,7 @@
 
 namespace App\Domain\Factory\Interfaces;
 
-use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 
 interface FactoryInterface

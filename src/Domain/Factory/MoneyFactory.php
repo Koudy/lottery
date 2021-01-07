@@ -3,7 +3,7 @@
 namespace App\Domain\Factory;
 
 use App\Domain\Factory\Interfaces\FactoryInterface;
-use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
 use App\Domain\Prize\Structure\MoneyStructureGenerator;
 use App\Domain\Repository\MoneyPrizeRepository;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;

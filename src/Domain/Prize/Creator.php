@@ -2,10 +2,10 @@
 
 namespace App\Domain\Prize;
 
-use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
 use App\Domain\Prize\Interfaces\FactoryInterface;
 use App\Domain\Prize\Interfaces\CreatorInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
 
 class Creator implements CreatorInterface
 {

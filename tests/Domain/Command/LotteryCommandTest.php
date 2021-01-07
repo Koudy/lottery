@@ -8,8 +8,8 @@ use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
 use App\Domain\Factory\Interfaces\FactoryInterface;
 use App\Domain\Prize\Interfaces\CreatorInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
-use App\Domain\Prize\Interfaces\StructureGeneratorInterface;
 use App\Domain\Prize\Interfaces\TypeRandomizerInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 

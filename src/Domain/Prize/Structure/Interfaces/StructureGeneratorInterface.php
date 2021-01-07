@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Domain\Prize\Interfaces;
-
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+namespace App\Domain\Prize\Structure\Interfaces;
 
 interface StructureGeneratorInterface
 {

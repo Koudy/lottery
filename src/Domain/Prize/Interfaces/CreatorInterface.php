@@ -2,6 +2,8 @@
 
 namespace App\Domain\Prize\Interfaces;
 
+use App\Domain\Prize\Structure\Interfaces\StructureGeneratorInterface;
+
 interface CreatorInterface
 {
     /**
