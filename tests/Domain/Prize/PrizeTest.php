@@ -12,7 +12,7 @@ class PrizeTest extends TestCase
 
     private const USER_NAME = 'Some user name';
 
-    public function testGetType(): void
+    public function testCreateObject(): void
     {
         $structure = $this->createMock(PrizeStructureInterface::class);
 

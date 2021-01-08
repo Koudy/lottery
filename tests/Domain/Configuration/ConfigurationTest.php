@@ -18,22 +18,29 @@ class ConfigurationTest extends TestCase
             'type2'
         ];
 
-        $configuration = new Configuration($prizeTypes, '', 0);
+        $configuration = new Configuration($prizeTypes, '', 0, 0);
 
         $this->assertSame($prizeTypes, $configuration->getPrizeTypes());
     }
 
     public function testGetCurrency(): void
     {
-        $configuration = new Configuration([], self::CURRENCY, '0');
+        $configuration = new Configuration([], self::CURRENCY, 0, 0);
 
         $this->assertSame(self::CURRENCY, $configuration->getCurrency());
     }
 
     public function testGetMoneyLimit(): void
     {
-        $configuration = new Configuration([], '', self::LIMIT);
+        $configuration = new Configuration([], '', self::LIMIT, 0);
 
         $this->assertSame(self::LIMIT, $configuration->getMoneyLimit());
+    }
+
+    public function testGetPointsLimit(): void
+    {
+        $configuration = new Configuration([], '', 0, self::LIMIT);
+
+        $this->assertSame(self::LIMIT, $configuration->getPointsLimit());
     }
 }

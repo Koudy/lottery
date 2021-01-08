@@ -24,4 +24,9 @@ interface ConfigurationInterface
      * @return int
      */
     public function getMoneyLimit(): int;
+
+    /**
+     * @return int
+     */
+    public function getPointsLimit(): int;
 }

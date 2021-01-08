@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Context\ContextException;
 use App\Context\LotteryContextFactory;
 use App\Domain\Command\LotteryCommand;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +16,7 @@ class LuckyController extends AbstractController
      * @param LotteryContextFactory $lotteryContextFactory
      * @param LotteryCommand $command
      * @return Response
-     * @throws \App\Context\ContextException
+     * @throws ContextException
      */
     public function index(
         UserInterface $user,
