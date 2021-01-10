@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Interfaces;
 
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 
 interface PrizeInterface
 {
@@ -17,7 +17,7 @@ interface PrizeInterface
     public function getUserName(): string;
 
     /**
-     * @return PrizeStructureInterface
+     * @return StructureInterface
      */
-    public function getStructure(): PrizeStructureInterface;
+    public function getStructure(): StructureInterface;
 }

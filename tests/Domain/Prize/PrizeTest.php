@@ -3,7 +3,7 @@
 namespace App\Tests\Domain\Prize;
 
 use App\Domain\Prize\Prize;
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 use PHPUnit\Framework\TestCase;
 
 class PrizeTest extends TestCase
@@ -14,7 +14,7 @@ class PrizeTest extends TestCase
 
     public function testCreateObject(): void
     {
-        $structure = $this->createMock(PrizeStructureInterface::class);
+        $structure = $this->createMock(StructureInterface::class);
 
         $prize = new Prize(self::TYPE, self::USER_NAME, $structure);
 

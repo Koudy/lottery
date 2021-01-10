@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Points;
 
-use App\Domain\Prize\Structure\Interfaces\PointsFactoryInterface;
+use App\Domain\Prize\Structure\Points\Interfaces\PointsFactoryInterface;
 
 class Factory implements PointsFactoryInterface
 {

@@ -2,9 +2,9 @@
 
 namespace App\Domain\Prize\Structure\Points;
 
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 
-class Points implements PrizeStructureInterface
+class Points implements StructureInterface
 {
     public const PARAMETER_NAME_SUM = 'sum';
 

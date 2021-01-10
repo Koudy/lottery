@@ -2,9 +2,9 @@
 
 namespace App\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 
-class Thing implements PrizeStructureInterface
+class Thing implements StructureInterface
 {
     public const PARAMETER_NAME_ID = 'id';
 

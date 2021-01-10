@@ -2,9 +2,9 @@
 
 namespace App\Domain\Prize\Structure\Money;
 
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 
-class Money implements PrizeStructureInterface
+class Money implements StructureInterface
 {
     public const PARAMETER_NAME_SUM = 'sum';
 

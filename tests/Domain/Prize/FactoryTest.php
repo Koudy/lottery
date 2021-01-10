@@ -4,7 +4,7 @@ namespace App\Tests\Domain\Prize;
 
 use App\Domain\Prize\Factory;
 use App\Domain\Prize\Interfaces\PrizeInterface;
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 use PHPUnit\Framework\TestCase;
 
 class FactoryTest extends TestCase
@@ -17,7 +17,7 @@ class FactoryTest extends TestCase
     {
         $factory = new Factory();
 
-        $structure = $this->createMock(PrizeStructureInterface::class);
+        $structure = $this->createMock(StructureInterface::class);
 
         $prize = $factory->create(self::TYPE, self::USER_NAME, $structure);
 

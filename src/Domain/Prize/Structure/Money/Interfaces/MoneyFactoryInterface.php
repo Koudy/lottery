@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Prize\Structure\Interfaces;
+namespace App\Domain\Prize\Structure\Money\Interfaces;
 
 use App\Domain\Prize\Structure\Money\Money;
 

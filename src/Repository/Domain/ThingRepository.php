@@ -2,7 +2,7 @@
 
 namespace App\Repository\Domain;
 
-use App\Domain\Prize\Structure\Interfaces\ThingFactoryInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingFactoryInterface;
 use App\Domain\Prize\Structure\Thing\Thing;
 use App\Repository\ThingRepository as ThingEntityRepository;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;

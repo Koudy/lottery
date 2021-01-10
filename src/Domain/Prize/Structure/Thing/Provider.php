@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Interfaces\ThingProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingProviderInterface;
 use App\Domain\Prize\Structure\Thing\Interfaces\LockerInterface;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 

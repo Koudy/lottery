@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingNamesProviderInterface;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 
 class NamesProvider implements ThingNamesProviderInterface

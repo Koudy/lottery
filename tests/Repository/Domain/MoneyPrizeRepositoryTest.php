@@ -3,7 +3,7 @@
 namespace App\Tests\Repository\Domain;
 
 use App\Domain\Prize\Interfaces\PrizeInterface;
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 use App\Entity\Money;
 use App\Entity\Prize;
 use App\Entity\User;
@@ -32,7 +32,7 @@ class MoneyPrizeRepositoryTest extends TestCase
             'currency' => self::CURRENCY
         ];
 
-        $structure = $this->createMock(PrizeStructureInterface::class);
+        $structure = $this->createMock(StructureInterface::class);
         $structure
             ->method('getParameters')
             ->willReturn($parameters);

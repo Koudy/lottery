@@ -4,8 +4,8 @@ namespace App\Tests\Domain\Prize\Structure\Thing;
 
 use App\Domain\Generator\Interfaces\ItemRandomizerInterface;
 use App\Domain\Prize\Exception\NotAvailableException;
-use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
-use App\Domain\Prize\Structure\Interfaces\ThingProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingNamesProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingProviderInterface;
 use App\Domain\Prize\Structure\Thing\Thing;
 use App\Domain\Prize\Structure\Thing\Generator;
 use PHPUnit\Framework\TestCase;

@@ -5,9 +5,9 @@ namespace App\Domain\Prize\Structure\Thing;
 use App\Domain\Generator\Interfaces\ItemRandomizerInterface;
 use App\Domain\Prize\Exception\NotAvailableException;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
-use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
-use App\Domain\Prize\Structure\Interfaces\ThingProviderInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingNamesProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingProviderInterface;
 
 class Generator implements GeneratorInterface
 {
@@ -39,7 +39,7 @@ class Generator implements GeneratorInterface
     /**
      * @inheritDoc
      */
-    public function generate(): PrizeStructureInterface
+    public function generate(): StructureInterface
     {
         $names = $this->thingNamesProvider->provide();
 

@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Interfaces\ThingFactoryInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingFactoryInterface;
 
 class Factory implements ThingFactoryInterface
 {

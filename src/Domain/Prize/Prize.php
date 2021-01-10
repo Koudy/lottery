@@ -3,7 +3,7 @@
 namespace App\Domain\Prize;
 
 use App\Domain\Prize\Interfaces\PrizeInterface;
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 
 class Prize implements PrizeInterface
 {
@@ -18,19 +18,19 @@ class Prize implements PrizeInterface
     private string $userName;
 
     /**
-     * @var PrizeStructureInterface
+     * @var StructureInterface
      */
-    private PrizeStructureInterface $prizeStructure;
+    private StructureInterface $prizeStructure;
 
     /**
      * @param string $type
      * @param string $userName
-     * @param PrizeStructureInterface $prizeStructure
+     * @param StructureInterface $prizeStructure
      */
     public function __construct(
         string $type,
         string $userName,
-        PrizeStructureInterface $prizeStructure
+        StructureInterface $prizeStructure
     ) {
         $this->type = $type;
         $this->userName = $userName;
@@ -56,7 +56,7 @@ class Prize implements PrizeInterface
     /**
      * @inheritDoc
      */
-    public function getStructure(): PrizeStructureInterface
+    public function getStructure(): StructureInterface
     {
         return $this->prizeStructure;
     }

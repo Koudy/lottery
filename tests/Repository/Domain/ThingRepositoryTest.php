@@ -2,7 +2,7 @@
 
 namespace App\Tests\Repository\Domain;
 
-use App\Domain\Prize\Structure\Interfaces\ThingFactoryInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ThingFactoryInterface;
 use App\Domain\Prize\Structure\Thing\Thing;
 use App\Entity\Thing as ThingEntity;
 use App\Repository\Domain\ThingRepository;

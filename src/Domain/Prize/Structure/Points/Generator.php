@@ -4,8 +4,8 @@ namespace App\Domain\Prize\Structure\Points;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
-use App\Domain\Prize\Structure\Interfaces\PointsFactoryInterface;
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Points\Interfaces\PointsFactoryInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 
 class Generator implements GeneratorInterface
@@ -44,7 +44,7 @@ class Generator implements GeneratorInterface
     /**
      * @inheritDoc
      */
-    public function generate(): PrizeStructureInterface
+    public function generate(): StructureInterface
     {
         $sum = $this->sumGenerator->generate($this->configuration->getPointsLimit());
 

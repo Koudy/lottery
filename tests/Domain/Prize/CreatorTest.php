@@ -6,7 +6,7 @@ use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
 use App\Domain\Prize\Interfaces\FactoryInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
 use App\Domain\Prize\Creator;
-use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
+use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -18,7 +18,7 @@ class CreatorTest extends TestCase
 
     public function testCreate(): void
     {
-        $structure = $this->createMock(PrizeStructureInterface::class);
+        $structure = $this->createMock(StructureInterface::class);
 
         $structureGenerator = $this->createMock(GeneratorInterface::class);
         $structureGenerator

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Prize\Structure\Interfaces;
+namespace App\Domain\Prize\Structure\Thing\Interfaces;
 
 interface ThingNamesProviderInterface
 {

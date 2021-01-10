@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Money;
 
-use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
+use App\Domain\Prize\Structure\Money\Interfaces\MoneyFactoryInterface;
 
 class Factory implements MoneyFactoryInterface
 {

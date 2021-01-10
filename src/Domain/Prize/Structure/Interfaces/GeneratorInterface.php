@@ -7,9 +7,9 @@ use App\Domain\Prize\Exception\NotAvailableException;
 interface GeneratorInterface
 {
     /**
-     * @return PrizeStructureInterface
+     * @return StructureInterface
      *
      * @throws NotAvailableException
      */
-    public function generate(): PrizeStructureInterface;
+    public function generate(): StructureInterface;
 }
