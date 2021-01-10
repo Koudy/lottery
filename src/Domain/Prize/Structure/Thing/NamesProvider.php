@@ -5,7 +5,7 @@ namespace App\Domain\Prize\Structure\Thing;
 use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 
-class ThingNamesProvider implements ThingNamesProviderInterface
+class NamesProvider implements ThingNamesProviderInterface
 {
     /**
      * @var ThingRepositoryInterface

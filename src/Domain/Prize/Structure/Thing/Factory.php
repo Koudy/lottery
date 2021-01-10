@@ -4,7 +4,7 @@ namespace App\Domain\Prize\Structure\Thing;
 
 use App\Domain\Prize\Structure\Interfaces\ThingFactoryInterface;
 
-class ThingFactory implements ThingFactoryInterface
+class Factory implements ThingFactoryInterface
 {
     /**
      * @inheritDoc

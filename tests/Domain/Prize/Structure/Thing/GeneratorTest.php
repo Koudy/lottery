@@ -7,10 +7,10 @@ use App\Domain\Prize\Exception\NotAvailableException;
 use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
 use App\Domain\Prize\Structure\Interfaces\ThingProviderInterface;
 use App\Domain\Prize\Structure\Thing\Thing;
-use App\Domain\Prize\Structure\Thing\ThingGenerator;
+use App\Domain\Prize\Structure\Thing\Generator;
 use PHPUnit\Framework\TestCase;
 
-class ThingGeneratorTest extends TestCase
+class GeneratorTest extends TestCase
 {
     private const NAME = 'name1';
 
@@ -40,7 +40,7 @@ class ThingGeneratorTest extends TestCase
             ->with(self::NAME)
             ->willReturn($thing);
 
-        $generator = new ThingGenerator($thingNamesProvider, $itemRandomizer, $thingProvider);
+        $generator = new Generator($thingNamesProvider, $itemRandomizer, $thingProvider);
 
         $this->assertSame($thing, $generator->generate());
     }
@@ -58,7 +58,7 @@ class ThingGeneratorTest extends TestCase
 
         $thingProvider = $this->createMock(ThingProviderInterface::class);
 
-        $generator = new ThingGenerator($thingNamesProvider, $itemRandomizer, $thingProvider);
+        $generator = new Generator($thingNamesProvider, $itemRandomizer, $thingProvider);
 
         $this->expectException(NotAvailableException::class);
         $this->expectExceptionMessage('No items left');

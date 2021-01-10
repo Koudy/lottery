@@ -2,11 +2,11 @@
 
 namespace App\Tests\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Thing\ThingNamesProvider;
+use App\Domain\Prize\Structure\Thing\NamesProvider;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 
-class ThingNamesProviderTest extends TestCase
+class NamesProviderTest extends TestCase
 {
     public function testProvide(): void
     {
@@ -20,7 +20,7 @@ class ThingNamesProviderTest extends TestCase
             ->method('getUniqueNamesWithEmptyPrizeId')
             ->willReturn($names);
 
-        $provider = new ThingNamesProvider($thingRepository);
+        $provider = new NamesProvider($thingRepository);
 
         $this->assertSame($names, $provider->provide());
     }

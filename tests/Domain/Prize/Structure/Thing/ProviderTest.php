@@ -2,13 +2,13 @@
 
 namespace App\Tests\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Thing\ThingProvider;
+use App\Domain\Prize\Structure\Thing\Provider;
 use App\Domain\Prize\Structure\Thing\Thing;
 use App\Domain\Prize\Structure\Thing\Interfaces\LockerInterface;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 
-class ThingProviderTest extends TestCase
+class ProviderTest extends TestCase
 {
     private const ID = 1;
 
@@ -33,7 +33,7 @@ class ThingProviderTest extends TestCase
             ->method('lock')
             ->with(self::ID);
 
-        $provider = new ThingProvider($thingRepository, $locker);
+        $provider = new Provider($thingRepository, $locker);
 
         $this->assertSame($thing, $provider->provide(self::NAME));
     }

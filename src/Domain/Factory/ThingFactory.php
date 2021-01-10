@@ -4,16 +4,16 @@ namespace App\Domain\Factory;
 
 use App\Domain\Factory\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
-use App\Domain\Prize\Structure\Thing\ThingGenerator;
+use App\Domain\Prize\Structure\Thing\Generator;
 use App\Domain\Repository\Interfaces\ThingPrizeRepositoryInterface;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 
 class ThingFactory implements FactoryInterface
 {
     /**
-     * @var ThingGenerator
+     * @var Generator
      */
-    private ThingGenerator $thingStructureGenerator;
+    private Generator $thingStructureGenerator;
 
     /**
      * @var ThingPrizeRepositoryInterface
@@ -21,11 +21,11 @@ class ThingFactory implements FactoryInterface
     private ThingPrizeRepositoryInterface $thingPrizeRepository;
 
     /**
-     * @param ThingGenerator $structureGenerator
+     * @param Generator $structureGenerator
      * @param ThingPrizeRepositoryInterface $thingPrizeRepository
      */
     public function __construct(
-        ThingGenerator $structureGenerator,
+        Generator $structureGenerator,
         ThingPrizeRepositoryInterface $thingPrizeRepository
     )
     {

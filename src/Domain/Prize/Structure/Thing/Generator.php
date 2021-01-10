@@ -9,7 +9,7 @@ use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
 use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
 use App\Domain\Prize\Structure\Interfaces\ThingProviderInterface;
 
-class ThingGenerator implements GeneratorInterface
+class Generator implements GeneratorInterface
 {
     /**
      * @var ThingNamesProviderInterface

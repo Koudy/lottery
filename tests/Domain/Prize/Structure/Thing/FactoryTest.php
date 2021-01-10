@@ -2,10 +2,10 @@
 
 namespace App\Tests\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Thing\ThingFactory;
+use App\Domain\Prize\Structure\Thing\Factory;
 use PHPUnit\Framework\TestCase;
 
-class ThingFactoryTest extends TestCase
+class FactoryTest extends TestCase
 {
     private const ID = 1;
 
@@ -13,7 +13,7 @@ class ThingFactoryTest extends TestCase
 
     public function testCreate(): void
     {
-        $factory = new ThingFactory();
+        $factory = new Factory();
 
         $thing = $factory->create(self::ID, self::NAME);
 

@@ -6,7 +6,7 @@ use App\Domain\Prize\Structure\Interfaces\ThingProviderInterface;
 use App\Domain\Prize\Structure\Thing\Interfaces\LockerInterface;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 
-class ThingProvider implements ThingProviderInterface
+class Provider implements ThingProviderInterface
 {
     /**
      * @var ThingRepositoryInterface
