@@ -2,23 +2,33 @@
 
 namespace App\Domain\Prize;
 
+use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
 use App\Domain\Prize\Interfaces\FactoryInterface;
 use App\Domain\Prize\Interfaces\CreatorInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
-use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 
 class Creator implements CreatorInterface
 {
+    /**
+     * @var FactoriesSelectorInterface
+     */
+    private FactoriesSelectorInterface $factoriesSelector;
+
     /**
      * @var FactoryInterface
      */
     private FactoryInterface $prizeFactory;
 
     /**
+     * @param FactoriesSelectorInterface $factoriesSelector
      * @param FactoryInterface $prizeFactory
      */
-    public function __construct(FactoryInterface $prizeFactory)
+    public function __construct(
+        FactoriesSelectorInterface $factoriesSelector,
+        FactoryInterface $prizeFactory
+    )
     {
+        $this->factoriesSelector = $factoriesSelector;
         $this->prizeFactory = $prizeFactory;
     }
 
@@ -27,10 +37,11 @@ class Creator implements CreatorInterface
      */
     public function create(
         string $type,
-        string $userName,
-        GeneratorInterface $structureGenerator
+        string $userName
     ): PrizeInterface {
-        $structure = $structureGenerator->generate();
+        $factory = $this->factoriesSelector->select($type);
+
+        $structure = $factory->getStructureGenerator()->generate();
 
         return $this->prizeFactory->create($type, $userName, $structure);
     }

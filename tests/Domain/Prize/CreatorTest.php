@@ -2,6 +2,7 @@
 
 namespace App\Tests\Domain\Prize;
 
+use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
 use App\Domain\Prize\Interfaces\FactoryInterface;
 use App\Domain\Prize\Interfaces\PrizeInterface;
 use App\Domain\Prize\Creator;
@@ -24,6 +25,17 @@ class CreatorTest extends TestCase
             ->method('generate')
             ->willReturn($structure);
 
+        $factory = $this->createMock(\App\Domain\Factory\Interfaces\FactoryInterface::class);
+        $factory
+            ->method('getStructureGenerator')
+            ->willReturn($structureGenerator);
+
+        $factoriesSelector = $this->createMock(FactoriesSelectorInterface::class);
+        $factoriesSelector
+            ->method('select')
+            ->with(self::PRICE_TYPE)
+            ->willReturn($factory);
+
         $prize = $this->createMock(PrizeInterface::class);
 
         $prizeFactory = $this->createMock(FactoryInterface::class);
@@ -32,13 +44,13 @@ class CreatorTest extends TestCase
             ->with(self::PRICE_TYPE, self::USER_NAME, $structure)
             ->willReturn($prize);
 
-        $prizeCreator = new Creator($prizeFactory);
+        $prizeCreator = new Creator($factoriesSelector, $prizeFactory);
 
         $this->assertSame(
             $prize,
             $prizeCreator->create(
                 self::PRICE_TYPE,
-                self::USER_NAME, $structureGenerator
+                self::USER_NAME
             )
         );
     }

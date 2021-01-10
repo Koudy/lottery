@@ -29,4 +29,9 @@ interface ConfigurationInterface
      * @return int
      */
     public function getPointsLimit(): int;
+
+    /**
+     * @return int
+     */
+    public function getPrizeProvideAttemptCount(): int;
 }

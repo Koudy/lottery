@@ -3,21 +3,21 @@
 namespace App\Domain\Command;
 
 use App\Domain\Command\Context\Interfaces\LotteryContextInterface;
-use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
 use App\Domain\Prize\Interfaces\CreatorInterface;
-use App\Domain\Prize\Interfaces\TypeRandomizerInterface;
+use App\Domain\Prize\Interfaces\ProviderInterface;
+use App\Domain\Prize\Interfaces\SaverInterface;
 
 class LotteryCommand
 {
     /**
-     * @var TypeRandomizerInterface
+     * @var ProviderInterface
      */
-    private TypeRandomizerInterface $prizeTypeRandomizer;
+    private ProviderInterface $prizeProvider;
 
     /**
-     * @var FactoriesSelectorInterface
+     * @var SaverInterface
      */
-    private FactoriesSelectorInterface $factoriesSelector;
+    private SaverInterface $prizeSaver;
 
     /**
      * @var CreatorInterface
@@ -25,13 +25,11 @@ class LotteryCommand
     private CreatorInterface $prizeCreator;
 
     public function __construct(
-        TypeRandomizerInterface $typeRandomizer,
-        FactoriesSelectorInterface $factoriesSelector,
-        CreatorInterface $prizeCreator
+        ProviderInterface $prizeProvider,
+        SaverInterface $factoriesSelector
     ) {
-        $this->prizeTypeRandomizer = $typeRandomizer;
-        $this->factoriesSelector = $factoriesSelector;
-        $this->prizeCreator = $prizeCreator;
+        $this->prizeProvider = $prizeProvider;
+        $this->prizeSaver = $factoriesSelector;
     }
 
     /**
@@ -39,17 +37,9 @@ class LotteryCommand
      */
     public function execute(LotteryContextInterface $context): void
     {
-        $prizeType = $this->prizeTypeRandomizer->provide();
+        $prize = $this->prizeProvider->provide($context->getUserName());
 
-        $factory = $this->factoriesSelector->select($prizeType);
-
-        $prize = $this->prizeCreator->create(
-            $prizeType,
-            $context->getUserName(),
-            $factory->getStructureGenerator()
-        );
-
-        $factory->getRepository()->store($prize);
+        $this->prizeSaver->save($prize);
 
         $context->setPrize($prize);
     }

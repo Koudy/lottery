@@ -39,3 +39,4 @@ services:
             $currency: RUB
             $moneyLimit: 500
             $pointsLimit: 1000
+            $prizeProvideAttemptCount: 10

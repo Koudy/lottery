@@ -25,21 +25,29 @@ class Configuration implements ConfigurationInterface
     private int $pointsLimit;
 
     /**
+     * @var int
+     */
+    private int $prizeProvideAttemptCount;
+
+    /**
      * @param array $prizeTypes
      * @param string $currency
      * @param int $moneyLimit
      * @param int $pointsLimit
+     * @param int $prizeProvideAttemptCount
      */
     public function __construct(
         array $prizeTypes,
         string $currency,
         int $moneyLimit,
-        int $pointsLimit
+        int $pointsLimit,
+        int $prizeProvideAttemptCount
     ) {
         $this->prizeTypes = $prizeTypes;
         $this->currency = $currency;
         $this->moneyLimit = $moneyLimit;
         $this->pointsLimit = $pointsLimit;
+        $this->prizeProvideAttemptCount = $prizeProvideAttemptCount;
     }
 
     /**
@@ -72,5 +80,13 @@ class Configuration implements ConfigurationInterface
     public function getPointsLimit(): int
     {
         return $this->pointsLimit;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getPrizeProvideAttemptCount(): int
+    {
+        return $this->prizeProvideAttemptCount;
     }
 }

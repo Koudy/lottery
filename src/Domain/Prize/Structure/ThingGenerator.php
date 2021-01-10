@@ -3,6 +3,7 @@
 namespace App\Domain\Prize\Structure;
 
 use App\Domain\Generator\Interfaces\ItemRandomizerInterface;
+use App\Domain\Prize\Exception\NotAvailableException;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
 use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
@@ -41,6 +42,10 @@ class ThingGenerator implements GeneratorInterface
     public function generate(): PrizeStructureInterface
     {
         $names = $this->thingNamesProvider->provide();
+
+        if (empty($names)) {
+            throw new NotAvailableException('No items left');
+        }
 
         $name = $this->itemRandomizer->provide($names);
 

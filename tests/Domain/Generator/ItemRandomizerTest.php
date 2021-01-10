@@ -36,7 +36,7 @@ class ItemRandomizerTest extends TestCase
     {
         $types = [];
 
-        foreach (range(1, 20) as $number) {
+        foreach (range(1, 100) as $number) {
             $types[] = 'type' . $number;
         }
 

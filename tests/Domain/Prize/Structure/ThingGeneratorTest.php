@@ -3,6 +3,7 @@
 namespace App\Tests\Domain\Prize\Structure;
 
 use App\Domain\Generator\Interfaces\ItemRandomizerInterface;
+use App\Domain\Prize\Exception\NotAvailableException;
 use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
 use App\Domain\Prize\Structure\Interfaces\ThingProviderInterface;
 use App\Domain\Prize\Structure\Thing;
@@ -42,5 +43,26 @@ class ThingGeneratorTest extends TestCase
         $generator = new ThingGenerator($thingNamesProvider, $itemRandomizer, $thingProvider);
 
         $this->assertSame($thing, $generator->generate());
+    }
+
+    public function testGenerateWhenNoAvailableNames(): void
+    {
+        $thingNames = [];
+
+        $thingNamesProvider = $this->createMock(ThingNamesProviderInterface::class);
+        $thingNamesProvider
+            ->method('provide')
+            ->willReturn($thingNames);
+
+        $itemRandomizer = $this->createMock(ItemRandomizerInterface::class);
+
+        $thingProvider = $this->createMock(ThingProviderInterface::class);
+
+        $generator = new ThingGenerator($thingNamesProvider, $itemRandomizer, $thingProvider);
+
+        $this->expectException(NotAvailableException::class);
+        $this->expectExceptionMessage('No items left');
+
+        $generator->generate();
     }
 }

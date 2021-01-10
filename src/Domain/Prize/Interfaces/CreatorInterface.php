@@ -2,19 +2,20 @@
 
 namespace App\Domain\Prize\Interfaces;
 
-use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
+use App\Domain\Prize\Exception\NotAvailableException;
 
 interface CreatorInterface
 {
     /**
      * @param string $type
      * @param string $userName
-     * @param GeneratorInterface $structureGenerator
+     *
      * @return PrizeInterface
+     *
+     * @throws NotAvailableException
      */
     public function create(
         string $type,
-        string $userName,
-        GeneratorInterface $structureGenerator
+        string $userName
     ): PrizeInterface;
 }
