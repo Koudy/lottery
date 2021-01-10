@@ -3,7 +3,7 @@
 namespace App\Tests\Domain\Factory;
 
 use App\Domain\Factory\MoneyFactory;
-use App\Domain\Prize\Structure\MoneyGenerator;
+use App\Domain\Prize\Structure\Money\MoneyGenerator;
 use App\Domain\Repository\Interfaces\MoneyPrizeRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 

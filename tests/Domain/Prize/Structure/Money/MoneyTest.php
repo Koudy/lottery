@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Money;
 
-use App\Domain\Prize\Structure\Money;
+use App\Domain\Prize\Structure\Money\Money;
 use PHPUnit\Framework\TestCase;
 
 class MoneyTest extends TestCase

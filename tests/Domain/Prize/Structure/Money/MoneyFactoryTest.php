@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Money;
 
-use App\Domain\Prize\Structure\MoneyFactory;
+use App\Domain\Prize\Structure\Money\MoneyFactory;
 use Monolog\Test\TestCase;
 
 class MoneyFactoryTest extends TestCase

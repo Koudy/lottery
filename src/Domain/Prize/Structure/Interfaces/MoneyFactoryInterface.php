@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Interfaces;
 
-use App\Domain\Prize\Structure\Money;
+use App\Domain\Prize\Structure\Money\Money;
 
 interface MoneyFactoryInterface
 {

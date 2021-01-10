@@ -4,7 +4,7 @@ namespace App\Domain\Factory;
 
 use App\Domain\Factory\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
-use App\Domain\Prize\Structure\MoneyGenerator;
+use App\Domain\Prize\Structure\Money\MoneyGenerator;
 use App\Domain\Repository\Interfaces\MoneyPrizeRepositoryInterface;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 
