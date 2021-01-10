@@ -2,7 +2,7 @@
 
 namespace App\Repository\Domain;
 
-use App\Domain\Prize\Structure\Thing\Interfaces\ThingFactoryInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Thing\Thing;
 use App\Repository\ThingRepository as ThingEntityRepository;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
@@ -15,17 +15,17 @@ class ThingRepository implements ThingRepositoryInterface
     private ThingEntityRepository $thingEntityRepository;
 
     /**
-     * @var ThingFactoryInterface
+     * @var FactoryInterface
      */
-    private ThingFactoryInterface $thingFactory;
+    private FactoryInterface $thingFactory;
 
     /**
      * @param ThingEntityRepository $thingEntityRepository
-     * @param ThingFactoryInterface $thingFactory
+     * @param FactoryInterface $thingFactory
      */
     public function __construct(
         ThingEntityRepository $thingEntityRepository,
-        ThingFactoryInterface $thingFactory
+        FactoryInterface $thingFactory
     ) {
         $this->thingEntityRepository = $thingEntityRepository;
         $this->thingFactory = $thingFactory;

@@ -4,7 +4,7 @@ namespace App\Domain\Prize\Structure\Money;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
-use App\Domain\Prize\Structure\Money\Interfaces\MoneyFactoryInterface;
+use App\Domain\Prize\Structure\Money\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 
@@ -21,19 +21,19 @@ class Generator implements GeneratorInterface
     private SumGeneratorInterface $sumGenerator;
 
     /**
-     * @var MoneyFactoryInterface
+     * @var FactoryInterface
      */
-    private MoneyFactoryInterface $moneyStructureFactory;
+    private FactoryInterface $moneyStructureFactory;
 
     /**
      * @param ConfigurationInterface $configuration
      * @param SumGeneratorInterface $sumGenerator
-     * @param MoneyFactoryInterface $moneyStructureFactory
+     * @param FactoryInterface $moneyStructureFactory
      */
     public function __construct(
         ConfigurationInterface $configuration,
         SumGeneratorInterface $sumGenerator,
-        MoneyFactoryInterface $moneyStructureFactory
+        FactoryInterface $moneyStructureFactory
     )
     {
         $this->configuration = $configuration;

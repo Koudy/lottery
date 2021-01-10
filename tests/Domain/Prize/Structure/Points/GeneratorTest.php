@@ -4,7 +4,7 @@ namespace App\Tests\Domain\Prize\Structure\Points;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
-use App\Domain\Prize\Structure\Points\Interfaces\PointsFactoryInterface;
+use App\Domain\Prize\Structure\Points\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Points\Points;
 use App\Domain\Prize\Structure\Points\Generator;
 use PHPUnit\Framework\TestCase;
@@ -24,7 +24,7 @@ class GeneratorTest extends TestCase
 
         $points = $this->createMock(Points::class);
 
-        $pointsFactory = $this->createMock(PointsFactoryInterface::class);
+        $pointsFactory = $this->createMock(FactoryInterface::class);
         $pointsFactory
             ->method('create')
             ->with(self::SUM)

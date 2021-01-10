@@ -2,9 +2,9 @@
 
 namespace App\Domain\Prize\Structure\Points;
 
-use App\Domain\Prize\Structure\Points\Interfaces\PointsFactoryInterface;
+use App\Domain\Prize\Structure\Points\Interfaces\FactoryInterface;
 
-class Factory implements PointsFactoryInterface
+class Factory implements FactoryInterface
 {
     /**
      * @inheritDoc

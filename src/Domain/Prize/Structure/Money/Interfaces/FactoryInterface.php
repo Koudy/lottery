@@ -4,7 +4,7 @@ namespace App\Domain\Prize\Structure\Money\Interfaces;
 
 use App\Domain\Prize\Structure\Money\Money;
 
-interface MoneyFactoryInterface
+interface FactoryInterface
 {
     /**
      * @param int $sum

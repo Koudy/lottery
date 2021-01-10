@@ -2,9 +2,9 @@
 
 namespace App\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Thing\Interfaces\ThingFactoryInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\FactoryInterface;
 
-class Factory implements ThingFactoryInterface
+class Factory implements FactoryInterface
 {
     /**
      * @inheritDoc

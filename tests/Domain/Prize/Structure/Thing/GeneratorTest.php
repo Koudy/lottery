@@ -4,8 +4,8 @@ namespace App\Tests\Domain\Prize\Structure\Thing;
 
 use App\Domain\Generator\Interfaces\ItemRandomizerInterface;
 use App\Domain\Prize\Exception\NotAvailableException;
-use App\Domain\Prize\Structure\Thing\Interfaces\ThingNamesProviderInterface;
-use App\Domain\Prize\Structure\Thing\Interfaces\ThingProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\NamesProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ProviderInterface;
 use App\Domain\Prize\Structure\Thing\Thing;
 use App\Domain\Prize\Structure\Thing\Generator;
 use PHPUnit\Framework\TestCase;
@@ -21,7 +21,7 @@ class GeneratorTest extends TestCase
             'name2'
         ];
 
-        $thingNamesProvider = $this->createMock(ThingNamesProviderInterface::class);
+        $thingNamesProvider = $this->createMock(NamesProviderInterface::class);
         $thingNamesProvider
             ->method('provide')
             ->willReturn($thingNames);
@@ -34,7 +34,7 @@ class GeneratorTest extends TestCase
 
         $thing = $this->createMock(Thing::class);
 
-        $thingProvider = $this->createMock(ThingProviderInterface::class);
+        $thingProvider = $this->createMock(ProviderInterface::class);
         $thingProvider
             ->method('provide')
             ->with(self::NAME)
@@ -49,14 +49,14 @@ class GeneratorTest extends TestCase
     {
         $thingNames = [];
 
-        $thingNamesProvider = $this->createMock(ThingNamesProviderInterface::class);
+        $thingNamesProvider = $this->createMock(NamesProviderInterface::class);
         $thingNamesProvider
             ->method('provide')
             ->willReturn($thingNames);
 
         $itemRandomizer = $this->createMock(ItemRandomizerInterface::class);
 
-        $thingProvider = $this->createMock(ThingProviderInterface::class);
+        $thingProvider = $this->createMock(ProviderInterface::class);
 
         $generator = new Generator($thingNamesProvider, $itemRandomizer, $thingProvider);
 

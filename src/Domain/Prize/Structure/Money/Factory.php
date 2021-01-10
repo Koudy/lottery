@@ -2,9 +2,9 @@
 
 namespace App\Domain\Prize\Structure\Money;
 
-use App\Domain\Prize\Structure\Money\Interfaces\MoneyFactoryInterface;
+use App\Domain\Prize\Structure\Money\Interfaces\FactoryInterface;
 
-class Factory implements MoneyFactoryInterface
+class Factory implements FactoryInterface
 {
     /**
      * @inheritDoc

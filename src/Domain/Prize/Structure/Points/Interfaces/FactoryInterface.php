@@ -4,7 +4,7 @@ namespace App\Domain\Prize\Structure\Points\Interfaces;
 
 use App\Domain\Prize\Structure\Points\Points;
 
-interface PointsFactoryInterface
+interface FactoryInterface
 {
     /**
      * @param int $sum

@@ -2,10 +2,10 @@
 
 namespace App\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\Thing\Interfaces\ThingNamesProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\NamesProviderInterface;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 
-class NamesProvider implements ThingNamesProviderInterface
+class NamesProvider implements NamesProviderInterface
 {
     /**
      * @var ThingRepositoryInterface

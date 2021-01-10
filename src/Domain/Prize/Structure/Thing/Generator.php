@@ -6,15 +6,15 @@ use App\Domain\Generator\Interfaces\ItemRandomizerInterface;
 use App\Domain\Prize\Exception\NotAvailableException;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 use App\Domain\Prize\Structure\Interfaces\StructureInterface;
-use App\Domain\Prize\Structure\Thing\Interfaces\ThingNamesProviderInterface;
-use App\Domain\Prize\Structure\Thing\Interfaces\ThingProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\NamesProviderInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\ProviderInterface;
 
 class Generator implements GeneratorInterface
 {
     /**
-     * @var ThingNamesProviderInterface
+     * @var NamesProviderInterface
      */
-    private ThingNamesProviderInterface $thingNamesProvider;
+    private NamesProviderInterface $thingNamesProvider;
 
     /**
      * @var ItemRandomizerInterface
@@ -22,14 +22,14 @@ class Generator implements GeneratorInterface
     private ItemRandomizerInterface $itemRandomizer;
 
     /**
-     * @var ThingProviderInterface
+     * @var ProviderInterface
      */
-    private ThingProviderInterface $thingProvider;
+    private ProviderInterface $thingProvider;
 
     public function __construct(
-        ThingNamesProviderInterface $thingNamesProvider,
+        NamesProviderInterface $thingNamesProvider,
         ItemRandomizerInterface $itemRandomizer,
-        ThingProviderInterface $thingProvider
+        ProviderInterface $thingProvider
     ) {
         $this->thingNamesProvider = $thingNamesProvider;
         $this->itemRandomizer = $itemRandomizer;

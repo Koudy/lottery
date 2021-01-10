@@ -2,7 +2,7 @@
 
 namespace App\Tests\Repository\Domain;
 
-use App\Domain\Prize\Structure\Thing\Interfaces\ThingFactoryInterface;
+use App\Domain\Prize\Structure\Thing\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Thing\Thing;
 use App\Entity\Thing as ThingEntity;
 use App\Repository\Domain\ThingRepository;
@@ -30,7 +30,7 @@ class ThingRepositoryTest extends TestCase
 
         $thing = $this->createMock(Thing::class);
 
-        $thingFactory = $this->createMock(ThingFactoryInterface::class);
+        $thingFactory = $this->createMock(FactoryInterface::class);
         $thingFactory
             ->method('create')
             ->with(self::ID, self::NAME)
@@ -53,7 +53,7 @@ class ThingRepositoryTest extends TestCase
             ->method('getUniqueNamesWithEmptyPrizeId')
             ->willReturn($names);
 
-        $thingFactory = $this->createMock(ThingFactoryInterface::class);
+        $thingFactory = $this->createMock(FactoryInterface::class);
 
         $thingRepository = new ThingRepository($thingEntityRepository, $thingFactory);
 

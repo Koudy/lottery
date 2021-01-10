@@ -4,7 +4,7 @@ namespace App\Domain\Prize\Structure\Points;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
-use App\Domain\Prize\Structure\Points\Interfaces\PointsFactoryInterface;
+use App\Domain\Prize\Structure\Points\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\StructureInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 
@@ -21,19 +21,19 @@ class Generator implements GeneratorInterface
     private SumGeneratorInterface $sumGenerator;
 
     /**
-     * @var PointsFactoryInterface
+     * @var FactoryInterface
      */
-    private PointsFactoryInterface $pointsStructureFactory;
+    private FactoryInterface $pointsStructureFactory;
 
     /**
      * @param ConfigurationInterface $configuration
      * @param SumGeneratorInterface $sumGenerator
-     * @param PointsFactoryInterface $pointsStructureFactory
+     * @param FactoryInterface $pointsStructureFactory
      */
     public function __construct(
         ConfigurationInterface $configuration,
         SumGeneratorInterface $sumGenerator,
-        PointsFactoryInterface $pointsStructureFactory
+        FactoryInterface $pointsStructureFactory
     )
     {
         $this->configuration = $configuration;

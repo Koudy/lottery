@@ -4,12 +4,11 @@ namespace App\Domain\Prize\Structure\Thing\Interfaces;
 
 use App\Domain\Prize\Structure\Thing\Thing;
 
-interface ThingFactoryInterface
+interface ProviderInterface
 {
     /**
-     * @param int $id
      * @param string $name
      * @return Thing
      */
-    public function create(int $id, string $name): Thing;
+    public function provide(string $name): Thing;
 }

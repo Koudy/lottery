@@ -4,7 +4,7 @@ namespace App\Tests\Domain\Prize\Structure\Money;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
-use App\Domain\Prize\Structure\Money\Interfaces\MoneyFactoryInterface;
+use App\Domain\Prize\Structure\Money\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Money\Money;
 use App\Domain\Prize\Structure\Money\Generator;
 use PHPUnit\Framework\TestCase;
@@ -29,7 +29,7 @@ class GeneratorTest extends TestCase
 
         $money = $this->createMock(Money::class);
 
-        $moneyFactory = $this->createMock(MoneyFactoryInterface::class);
+        $moneyFactory = $this->createMock(FactoryInterface::class);
         $moneyFactory
             ->method('create')
             ->with(self::SUM, self::CURRENCY)

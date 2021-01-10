@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Thing\Interfaces;
 
-interface ThingNamesProviderInterface
+interface NamesProviderInterface
 {
     /**
      * @return array
