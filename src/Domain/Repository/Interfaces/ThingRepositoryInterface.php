@@ -2,7 +2,7 @@
 
 namespace App\Domain\Repository\Interfaces;
 
-use App\Domain\Prize\Structure\Thing;
+use App\Domain\Prize\Structure\Thing\Thing;
 
 interface ThingRepositoryInterface
 {

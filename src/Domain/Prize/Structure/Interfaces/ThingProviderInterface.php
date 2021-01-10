@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Interfaces;
 
-use App\Domain\Prize\Structure\Thing;
+use App\Domain\Prize\Structure\Thing\Thing;
 
 interface ThingProviderInterface
 {

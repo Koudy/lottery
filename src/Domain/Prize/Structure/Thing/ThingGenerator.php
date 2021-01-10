@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Prize\Structure;
+namespace App\Domain\Prize\Structure\Thing;
 
 use App\Domain\Generator\Interfaces\ItemRandomizerInterface;
 use App\Domain\Prize\Exception\NotAvailableException;

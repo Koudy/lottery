@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\ThingFactory;
+use App\Domain\Prize\Structure\Thing\ThingFactory;
 use PHPUnit\Framework\TestCase;
 
 class ThingFactoryTest extends TestCase

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\ThingProvider;
-use App\Domain\Prize\Structure\Thing;
+use App\Domain\Prize\Structure\Thing\ThingProvider;
+use App\Domain\Prize\Structure\Thing\Thing;
 use App\Domain\Prize\Structure\Thing\Interfaces\LockerInterface;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 use PHPUnit\Framework\TestCase;

@@ -4,7 +4,7 @@ namespace App\Domain\Factory;
 
 use App\Domain\Factory\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
-use App\Domain\Prize\Structure\ThingGenerator;
+use App\Domain\Prize\Structure\Thing\ThingGenerator;
 use App\Domain\Repository\Interfaces\ThingPrizeRepositoryInterface;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 

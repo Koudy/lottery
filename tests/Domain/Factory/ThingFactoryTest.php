@@ -3,7 +3,7 @@
 namespace App\Tests\Domain\Factory;
 
 use App\Domain\Factory\ThingFactory;
-use App\Domain\Prize\Structure\ThingGenerator;
+use App\Domain\Prize\Structure\Thing\ThingGenerator;
 use App\Domain\Repository\Interfaces\ThingPrizeRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 

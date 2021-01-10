@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Thing;
 
-use App\Domain\Prize\Structure\ThingNamesProvider;
+use App\Domain\Prize\Structure\Thing\ThingNamesProvider;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 

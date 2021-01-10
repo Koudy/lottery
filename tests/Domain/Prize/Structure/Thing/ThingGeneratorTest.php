@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Thing;
 
 use App\Domain\Generator\Interfaces\ItemRandomizerInterface;
 use App\Domain\Prize\Exception\NotAvailableException;
 use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
 use App\Domain\Prize\Structure\Interfaces\ThingProviderInterface;
-use App\Domain\Prize\Structure\Thing;
-use App\Domain\Prize\Structure\ThingGenerator;
+use App\Domain\Prize\Structure\Thing\Thing;
+use App\Domain\Prize\Structure\Thing\ThingGenerator;
 use PHPUnit\Framework\TestCase;
 
 class ThingGeneratorTest extends TestCase

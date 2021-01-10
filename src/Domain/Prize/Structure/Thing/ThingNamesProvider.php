@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Prize\Structure;
+namespace App\Domain\Prize\Structure\Thing;
 
 use App\Domain\Prize\Structure\Interfaces\ThingNamesProviderInterface;
 use App\Domain\Repository\Interfaces\ThingRepositoryInterface;
