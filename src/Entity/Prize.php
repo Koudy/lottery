@@ -38,6 +38,11 @@ class Prize
      */
     private $points;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Thing::class, mappedBy="prize", cascade={"persist", "remove"})
+     */
+    private $thing;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -100,6 +105,28 @@ class Prize
         }
 
         $this->points = $points;
+
+        return $this;
+    }
+
+    public function getThing(): ?Thing
+    {
+        return $this->thing;
+    }
+
+    public function setThing(?Thing $thing): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($thing === null && $this->thing !== null) {
+            $this->thing->setPrize(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($thing !== null && $thing->getPrize() !== $this) {
+            $thing->setPrize($this);
+        }
+
+        $this->thing = $thing;
 
         return $this;
     }

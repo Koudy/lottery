@@ -8,6 +8,7 @@ use App\Domain\Factory\Interfaces\FactoriesSelectorInterface;
 use App\Domain\Factory\Interfaces\FactoryInterface;
 use App\Domain\Factory\MoneyFactory;
 use App\Domain\Factory\PointsFactory;
+use App\Domain\Factory\ThingFactory;
 
 class FactoriesSelector implements FactoriesSelectorInterface
 {
@@ -22,15 +23,23 @@ class FactoriesSelector implements FactoriesSelectorInterface
     private PointsFactory $pointsFactory;
 
     /**
+     * @var ThingFactory
+     */
+    private ThingFactory $thingFactory;
+
+    /**
      * @param MoneyFactory $moneyFactory
      * @param PointsFactory $pointsFactory
+     * @param ThingFactory $thingFactory
      */
     public function __construct(
         MoneyFactory $moneyFactory,
-        PointsFactory $pointsFactory
+        PointsFactory $pointsFactory,
+        ThingFactory $thingFactory
     ) {
         $this->moneyFactory = $moneyFactory;
         $this->pointsFactory = $pointsFactory;
+        $this->thingFactory = $thingFactory;
     }
 
     /**
@@ -40,7 +49,8 @@ class FactoriesSelector implements FactoriesSelectorInterface
     {
         return match ($type) {
             ConfigurationInterface::PRICE_TYPE_MONEY => $this->moneyFactory,
-            ConfigurationInterface::PRICE_TYPE_POINTS => $this->pointsFactory
+            ConfigurationInterface::PRICE_TYPE_POINTS => $this->pointsFactory,
+            ConfigurationInterface::PRICE_TYPE_THING => $this->thingFactory
         };
     }
 }

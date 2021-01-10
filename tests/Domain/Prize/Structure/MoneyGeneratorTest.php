@@ -19,8 +19,6 @@ class MoneyGeneratorTest extends TestCase
 
     public function testGenerate(): void
     {
-        $structure = $this->createMock(Money::class);
-
         $configuration = $this->createMock(ConfigurationInterface::class);
         $configuration
             ->method('getCurrency')
@@ -29,11 +27,13 @@ class MoneyGeneratorTest extends TestCase
             ->method('getMoneyLimit')
             ->willReturn(self::LIMIT);
 
-        $structureFactory = $this->createMock(MoneyFactoryInterface::class);
-        $structureFactory
+        $money = $this->createMock(Money::class);
+
+        $moneyFactory = $this->createMock(MoneyFactoryInterface::class);
+        $moneyFactory
             ->method('create')
             ->with(self::SUM, self::CURRENCY)
-            ->willReturn($structure);
+            ->willReturn($money);
 
         $sumGenerator = $this->createMock(SumGeneratorInterface::class);
         $sumGenerator
@@ -41,8 +41,8 @@ class MoneyGeneratorTest extends TestCase
             ->with(self::LIMIT)
             ->willReturn(self::SUM);
 
-        $generator = new MoneyGenerator($configuration, $sumGenerator, $structureFactory);
+        $generator = new MoneyGenerator($configuration, $sumGenerator, $moneyFactory);
 
-        $this->assertSame($structure, $generator->generate());
+        $this->assertSame($money, $generator->generate());
     }
 }

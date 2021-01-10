@@ -35,6 +35,7 @@ services:
             $prizeTypes:
                 - money
                 - points
+                - thing
             $currency: RUB
             $moneyLimit: 500
             $pointsLimit: 1000

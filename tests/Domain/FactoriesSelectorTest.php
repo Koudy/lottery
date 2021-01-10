@@ -6,6 +6,7 @@ use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\FactoriesSelector;
 use App\Domain\Factory\MoneyFactory;
 use App\Domain\Factory\PointsFactory;
+use App\Domain\Factory\ThingFactory;
 use PHPUnit\Framework\TestCase;
 
 class FactoriesSelectorTest extends TestCase
@@ -33,7 +34,7 @@ class FactoriesSelectorTest extends TestCase
         return [
             [ConfigurationInterface::PRICE_TYPE_MONEY, MoneyFactory::class],
             [ConfigurationInterface::PRICE_TYPE_POINTS, PointsFactory::class],
-//            [ConfigurationInterface::PRICE_TYPE_THING, ThingFactory::class]
+            [ConfigurationInterface::PRICE_TYPE_THING, ThingFactory::class]
         ];
     }
 
@@ -45,6 +46,7 @@ class FactoriesSelectorTest extends TestCase
         return new FactoriesSelector(
             $this->createMock(MoneyFactory::class),
             $this->createMock(PointsFactory::class),
+            $this->createMock(ThingFactory::class)
         );
     }
 }

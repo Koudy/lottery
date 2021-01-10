@@ -17,18 +17,18 @@ class PointsGeneratorTest extends TestCase
 
     public function testGenerate(): void
     {
-        $structure = $this->createMock(Points::class);
-
         $configuration = $this->createMock(ConfigurationInterface::class);
         $configuration
             ->method('getPointsLimit')
             ->willReturn(self::LIMIT);
 
-        $structureFactory = $this->createMock(PointsFactoryInterface::class);
-        $structureFactory
+        $points = $this->createMock(Points::class);
+
+        $pointsFactory = $this->createMock(PointsFactoryInterface::class);
+        $pointsFactory
             ->method('create')
             ->with(self::SUM)
-            ->willReturn($structure);
+            ->willReturn($points);
 
         $sumGenerator = $this->createMock(SumGeneratorInterface::class);
         $sumGenerator
@@ -36,8 +36,8 @@ class PointsGeneratorTest extends TestCase
             ->with(self::LIMIT)
             ->willReturn(self::SUM);
 
-        $generator = new PointsGenerator($configuration, $sumGenerator, $structureFactory);
+        $generator = new PointsGenerator($configuration, $sumGenerator, $pointsFactory);
 
-        $this->assertSame($structure, $generator->generate());
+        $this->assertSame($points, $generator->generate());
     }
 }
