@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Points;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
 use App\Domain\Prize\Structure\Interfaces\PointsFactoryInterface;
-use App\Domain\Prize\Structure\Points;
-use App\Domain\Prize\Structure\PointsGenerator;
+use App\Domain\Prize\Structure\Points\Points;
+use App\Domain\Prize\Structure\Points\PointsGenerator;
 use PHPUnit\Framework\TestCase;
 
 class PointsGeneratorTest extends TestCase

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Points;
 
-use App\Domain\Prize\Structure\Points;
+use App\Domain\Prize\Structure\Points\Points;
 use PHPUnit\Framework\TestCase;
 
 class PointsTest extends TestCase

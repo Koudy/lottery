@@ -3,7 +3,7 @@
 namespace App\Tests\Domain\Factory;
 
 use App\Domain\Factory\PointsFactory;
-use App\Domain\Prize\Structure\PointsGenerator;
+use App\Domain\Prize\Structure\Points\PointsGenerator;
 use App\Domain\Repository\Interfaces\PointsPrizeRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 

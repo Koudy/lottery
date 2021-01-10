@@ -2,7 +2,7 @@
 
 namespace App\Domain\Prize\Structure\Interfaces;
 
-use App\Domain\Prize\Structure\Points;
+use App\Domain\Prize\Structure\Points\Points;
 
 interface PointsFactoryInterface
 {

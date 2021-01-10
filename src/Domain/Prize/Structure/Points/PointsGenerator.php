@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Prize\Structure;
+namespace App\Domain\Prize\Structure\Points;
 
 use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;

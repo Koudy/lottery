@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Tests\Domain\Prize\Structure;
+namespace App\Tests\Domain\Prize\Structure\Points;
 
-use App\Domain\Prize\Structure\PointsFactory;
+use App\Domain\Prize\Structure\Points\PointsFactory;
 use Monolog\Test\TestCase;
 
 class PointsFactoryTest extends TestCase
