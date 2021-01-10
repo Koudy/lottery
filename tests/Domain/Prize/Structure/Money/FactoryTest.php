@@ -2,10 +2,10 @@
 
 namespace App\Tests\Domain\Prize\Structure\Money;
 
-use App\Domain\Prize\Structure\Money\MoneyFactory;
+use App\Domain\Prize\Structure\Money\Factory;
 use Monolog\Test\TestCase;
 
-class MoneyFactoryTest extends TestCase
+class FactoryTest extends TestCase
 {
     private const SUM = 100;
 
@@ -13,7 +13,7 @@ class MoneyFactoryTest extends TestCase
 
     public function testCreate(): void
     {
-        $factory = new MoneyFactory();
+        $factory = new Factory();
 
         $structure = $factory->create(self::SUM, self::CURRENCY);
 

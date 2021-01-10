@@ -6,10 +6,10 @@ use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
 use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
 use App\Domain\Prize\Structure\Money\Money;
-use App\Domain\Prize\Structure\Money\MoneyGenerator;
+use App\Domain\Prize\Structure\Money\Generator;
 use PHPUnit\Framework\TestCase;
 
-class MoneyGeneratorTest extends TestCase
+class GeneratorTest extends TestCase
 {
     private const SUM = 100;
 
@@ -41,7 +41,7 @@ class MoneyGeneratorTest extends TestCase
             ->with(self::LIMIT)
             ->willReturn(self::SUM);
 
-        $generator = new MoneyGenerator($configuration, $sumGenerator, $moneyFactory);
+        $generator = new Generator($configuration, $sumGenerator, $moneyFactory);
 
         $this->assertSame($money, $generator->generate());
     }

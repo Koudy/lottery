@@ -4,7 +4,7 @@ namespace App\Domain\Prize\Structure\Money;
 
 use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
 
-class MoneyFactory implements MoneyFactoryInterface
+class Factory implements MoneyFactoryInterface
 {
     /**
      * @inheritDoc

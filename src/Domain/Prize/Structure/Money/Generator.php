@@ -8,7 +8,7 @@ use App\Domain\Prize\Structure\Interfaces\MoneyFactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 
-class MoneyGenerator implements GeneratorInterface
+class Generator implements GeneratorInterface
 {
     /**
      * @var ConfigurationInterface
