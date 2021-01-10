@@ -4,16 +4,16 @@ namespace App\Domain\Factory;
 
 use App\Domain\Factory\Interfaces\FactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
-use App\Domain\Prize\Structure\Points\PointsGenerator;
+use App\Domain\Prize\Structure\Points\Generator;
 use App\Domain\Repository\Interfaces\PointsPrizeRepositoryInterface;
 use App\Domain\Repository\Interfaces\PrizeRepositoryInterface;
 
 class PointsFactory implements FactoryInterface
 {
     /**
-     * @var PointsGenerator
+     * @var Generator
      */
-    private PointsGenerator $pointsStructureGenerator;
+    private Generator $pointsStructureGenerator;
 
     /**
      * @var PointsPrizeRepositoryInterface
@@ -21,11 +21,11 @@ class PointsFactory implements FactoryInterface
     private PointsPrizeRepositoryInterface $pointsPrizeRepository;
 
     /**
-     * @param PointsGenerator $structureGenerator
+     * @param Generator $structureGenerator
      * @param PointsPrizeRepositoryInterface $pointsPrizeRepository
      */
     public function __construct(
-        PointsGenerator $structureGenerator,
+        Generator $structureGenerator,
         PointsPrizeRepositoryInterface $pointsPrizeRepository
     )
     {

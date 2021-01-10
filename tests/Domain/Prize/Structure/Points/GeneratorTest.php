@@ -6,10 +6,10 @@ use App\Domain\Configuration\ConfigurationInterface;
 use App\Domain\Generator\Interfaces\SumGeneratorInterface;
 use App\Domain\Prize\Structure\Interfaces\PointsFactoryInterface;
 use App\Domain\Prize\Structure\Points\Points;
-use App\Domain\Prize\Structure\Points\PointsGenerator;
+use App\Domain\Prize\Structure\Points\Generator;
 use PHPUnit\Framework\TestCase;
 
-class PointsGeneratorTest extends TestCase
+class GeneratorTest extends TestCase
 {
     private const SUM = 100;
 
@@ -36,7 +36,7 @@ class PointsGeneratorTest extends TestCase
             ->with(self::LIMIT)
             ->willReturn(self::SUM);
 
-        $generator = new PointsGenerator($configuration, $sumGenerator, $pointsFactory);
+        $generator = new Generator($configuration, $sumGenerator, $pointsFactory);
 
         $this->assertSame($points, $generator->generate());
     }

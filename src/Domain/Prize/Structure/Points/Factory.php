@@ -4,7 +4,7 @@ namespace App\Domain\Prize\Structure\Points;
 
 use App\Domain\Prize\Structure\Interfaces\PointsFactoryInterface;
 
-class PointsFactory implements PointsFactoryInterface
+class Factory implements PointsFactoryInterface
 {
     /**
      * @inheritDoc

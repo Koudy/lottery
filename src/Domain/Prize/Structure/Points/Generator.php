@@ -8,7 +8,7 @@ use App\Domain\Prize\Structure\Interfaces\PointsFactoryInterface;
 use App\Domain\Prize\Structure\Interfaces\PrizeStructureInterface;
 use App\Domain\Prize\Structure\Interfaces\GeneratorInterface;
 
-class PointsGenerator implements GeneratorInterface
+class Generator implements GeneratorInterface
 {
     /**
      * @var ConfigurationInterface
