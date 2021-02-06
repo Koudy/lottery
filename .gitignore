@@ -7,7 +7,10 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-/logs/*
+#/logs/*
+
+!/logs/nginx/access.log.dist
+!/logs/nginx/error.log.dist
 
 .idea
 ###> phpunit/phpunit ###
