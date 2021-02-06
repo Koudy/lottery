@@ -21,7 +21,7 @@ Run container:
 docker-compose up
 ```
 
-Go into a container(use sh, not bash) and install dependencies:
+Go into a container fpm(use sh, not bash) and install dependencies:
 ```
 composer install
 ```
