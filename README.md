@@ -1,10 +1,6 @@
 #Test demonstration project
 
-Нужно разработать веб-приложение для розыгрыша призов. После аутентификации пользователь может
-нажать на кнопку и получить случайный приз. Призы бывают 3х типов: денежный (случайная сумма в
-интервале), бонусные баллы (случайная сумма в интервале), физический предмет (случайный предмет из списка).
-От приза можно отказаться.
-Деньги и предметы ограничены, баллы лояльности нет.
+We need to develop a web application for a prize draw. After authentication, the user can click a button and get a random prize. There are 3 types of prizes: money (random amount in the interval), bonus points (random amount in the interval), a physical item (random item from the list). The prize can be refused. Money and items are limited, loyalty points are not.
 
 ## Getting Started
 Clone project:
